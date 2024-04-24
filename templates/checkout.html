@@ -1,0 +1,194 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+  
+    <div class="pagename">
+        <div class="container mt-4" style="display: flex;">
+            <div>
+                <p>
+                    <a href="#" style="text-decoration: none; 
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+        color: rgba(109, 109, 109, 1);
+
+            ">Home</a>
+                    <i class="bi bi-chevron-right" style="color: rgba(109, 109, 109, 1);"></i>
+                    <a href="#" style="text-decoration: none;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+        color:  rgba(109, 109, 109, 1);
+        ;">Camera</a>
+                </p>
+            </div>
+            <div>
+                <i class="bi bi-chevron-right" style="color: rgba(109, 109, 109, 1);"></i>
+                <a href="#" style="text-decoration: none;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+        color: rgba(109, 109, 109, 1);
+        ;">SONY PXW-X200 Full Camera Kit</a>
+                </p>
+            </div>
+            <div>
+                <i class="bi bi-chevron-right" style="color: rgba(109, 109, 109, 1);"></i>
+                <a href="#" style="text-decoration: none;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+        color: rgba(0, 84, 148, 1)
+        ;">Check out</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="check_out">
+                        <h1>Checkout</h1>
+                        <form action="your_action_here.php" method="post">
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" id="lastname" name="lastname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile:</label>
+                                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <textarea id="address" name="address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country:</label>
+                                <input type="text" id="country" name="country" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="note">Note:</label>
+                                <textarea id="note" name="note"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="check_oder">
+                        <div class="check_box">
+                            <h1>Low Rider Bikes For Set Props</h1>
+                            <h2 class="pt-2">Bikes in Hong Kong</h2>
+                            <div class="pt-5" style="display: flex; align-items: center;">
+                                <h3>7 days 23 Nov - 30 Now</h3>
+                                <h4>Change</h4>
+                            </div>
+                            <hr>
+                            <div class="coor" style="padding-top: 20px;">
+                                <div>
+                                    <div style="display: flex; align-items: center;">
+                                        <h2 style="font-size: medium;">$210.00 x 7days</h2>
+                                        <h3 style="margin-left: auto;">$1,952.66</h3>
+                                    </div>
+                                    <div>
+                                        <div style="display: flex; align-items: center;">
+                                            <h2 style="font-size: medium;">Services Charges</h2>
+                                            <h3 style="margin-left: auto;">$0.00</h3>
+                                        </div>
+                                        <div>
+                                            <div style="display: flex; align-items: center;">
+                                                <h2 style="font-size: medium;">Extended rental discount</h2>
+                                                <h3 style="margin-left: auto;">$4.00</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div style="display: flex; align-items: center;">
+                                            <p>Total</p>
+                                            <h6 style="margin-left: auto; 
+                                        font-family: Poppins;
+                                        font-size: 28px;font-weight: 600;color:rgba(0, 84, 148, 1);"> $1956.00</h6>
+                                        </div>
+                                        <h2 style="float: right;">Have a promo code?</h2>
+                                        <button type="button" style="width: 100%; background-color: rgba(0, 84, 148, 1); color: white;font-family: Poppins;
+                                        font-size: 18px;
+                                        font-weight: 700;     
+                                        ;" class="btn">Place Oder</button>
+
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            {% include 'footer.html' %}
+
+
+
+
+
+
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+            </body>
+
+</html>
