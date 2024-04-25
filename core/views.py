@@ -33,6 +33,9 @@ def signup(request):
 
 def lender(request):
     return render(request,'lend.html')
+def list_an_item(request):
+    return render(request,'list_an_item.html')
+
 
 
 

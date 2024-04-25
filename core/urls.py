@@ -25,7 +25,9 @@ urlpatterns = [
     path('reset/', views.pass_reset, name='reset'),
     path('home/', views.home, name='home'),
     path('signup/', views.signup, name='signup'),
-     path('lend/', views.lender, name='lend'),
+    path('lend/', views.lender, name='lend'),
+    path('list_an_item/', views.list_an_item, name='list_an_item'),
+
     
 
     
