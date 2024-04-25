@@ -20,12 +20,31 @@
     </head>
 
 <body>
+    {% include 'header.html' %}
+
     <div class="container-fluid">
+
         <div class="row">
+            
             <div class="col-md-7">
-                <!-- Content for the 7:5 ratio column -->
-            </div>
-            <div class="col-md-5">
+                
+                <div class="text-left">
+                    <div class="headings">
+                      <h2>Rent <span class="span_blue"> Cameras</span></h2>
+                      <h2> From <span class="span_blue"> People </span> In</h2>
+                      <h2>Your Community</h2>
+                    </div>
+                    <h6 style="font-family: Montserrat;font-size: 16px;font-weight: 400;color: rgba(74, 82, 90, 1);" class="pt-5" >
+                    Enjoy the item without the burden to</h6> 
+                    <h6 style="font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 400;
+                  
+                    color: rgba(74, 82, 90, 1);"> own
+                    and at a fraction of the price.</h6>
+                  </div>
+                        </div>
+            <div class="col-md-5" style="padding-right: 0%;">
                 <div style="height: 500px;background: linear-gradient(0deg, #F0F0F0, #F0F0F0),
                 linear-gradient(0deg, #EDF7FE, #EDF7FE);
                 
@@ -34,7 +53,6 @@
             </div>
         </div>
     </div>
-    {% include 'header.html' %}
 
 
 
@@ -42,10 +60,48 @@
 
 
 
+<div class="sharethejoy">
+
+
+    <div class="container mt-5" style="max-width: 800px;">
+        <div class="row">
+          <div class="col-sm text-center">
+            <img src="{% static 'image/nav/image 25.png' %}" class="img " alt="Image 1">
+            <div class="text-center home_ma">
+                <h1> Share the Joy</h1>
+                <h2>grow closer</h2>
+                <h2>Take part in the community.</h2>
+
+            </div>
 
 
 
 
+          </div>
+          <div class="col-sm text-center">
+            <img src="{% static 'image/nav/image 26.png' %}" class="img" alt="Image 1">
+            <div class="text-center home_ma">
+                <h1> Save money</h1>
+                <h2>Buy less. Rent on demand for
+                    </h2>
+                <h2>fraction of the price.</h2>
+            </div>
+          </div>
+          <div class="col-sm text-center">
+            <img src="{% static 'image/nav/image 27.png' %}" class="img" alt="Image 1">   
+            <div class="text-center home_ma">
+                <h1> Help the planet</h1>
+                <h2>Live greener. Reduce waste.</h2>
+            </div>       </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+</div>
 
 
 
