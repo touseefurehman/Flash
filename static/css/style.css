@@ -279,7 +279,6 @@ label {
     font-weight: bold;
 }
 
-
 .home_ma h1{
     font-family: Poppins;
 font-size: 24px;
@@ -381,21 +380,44 @@ color: rgba(109, 109, 109, 1);
 
 
 
+#id_password{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+    
+}
 
-
-
+#id_email{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+}
 
 .not_account_heading{
 font-family: Poppins;
 font-size: 14px;
 font-weight: 500;
-
 text-align: center;
 
+}
+#id_first_name{
+    border: none;
+    border: none;
+  border-bottom: 3px solid rgba(0, 84, 148, 1); 
+  outline: none;
+  width: 100%;
 }
 
 
 
+#id_last_name{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+}
 
 @media (max-width: 786px) {
     .search-button {

@@ -19,11 +19,14 @@ from django.urls import path, include
 from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('1/',include('app.urls')),
-    path('signin', views.sign),
+    path('1/',include('app.urls' )),
+    path('signin', views.signin, name='signin'),
     path('forget/', views.forget, name='forget'),
     path('reset/', views.pass_reset, name='reset'),
     path('home/', views.home, name='home'),
+    path('signup/', views.signup, name='signup'),
+     path('lend/', views.lender, name='lend'),
+    
 
     
 

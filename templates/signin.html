@@ -27,15 +27,18 @@
         <div class="container pt-5 signpage">
             <div class="headingjj">
                 <div class="text-center signup_h1">
-                    <h1>Sign up</h1>
+                    <h1>Sign in</h1>
                 </div>
                 <div class="forms_signup">
                     <div class="form-group p-5">
+
+
+                        <div>
                         <label class="email_label" for="email">Email Address:</label>
                         <input class="input_field form-control" type="email" id="email" name="email" placeholder="Enter your email" required>
                         <label class="email_label" for="password">Password:</label>
                         <input class="input_field form-control" type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <hr>
+                        <hr></div>
                         <div style="float: right;" >
                             <a style="text-decoration: none;" href="{% url 'forget' %}"><h6>Forget password</h6></a>
                         </div>
@@ -68,7 +71,7 @@
                         </div>
 
                         <div>
-                            <h4 class="not_account_heading">Don't have account yet? <a href="#" style="color: rgba(0, 84, 148, 1); text-decoration: none;">Sign up.</a></h4>
+                            <h4 class="not_account_heading">Don't have account yet? <a href="{% url 'signup' %}" style="color: rgba(0, 84, 148, 1); text-decoration: none;">Sign up.</a></h4>
                         </div>
 
 
