@@ -6,8 +6,7 @@ def home1(request):
 
 
 
-def pdp(request):
-    return render(request,'pdp.html')
+
 
 def checkout(request):
     return render(request,'checkout.html')

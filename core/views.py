@@ -47,3 +47,5 @@ def camera(request):
 
 
 
+def pdp(request):
+    return render(request,'pdp.html')
