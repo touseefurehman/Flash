@@ -5,8 +5,6 @@ def home1(request):
     return render(request,'index.html')
 
 
-def camera(request):
-    return render(request,'camera.html')
 
 def pdp(request):
     return render(request,'pdp.html')

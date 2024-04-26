@@ -42,6 +42,8 @@ def list_an_item(request):
 
 
 
+def camera(request):
+    return render(request,'search_by_category.html')
 
 
 

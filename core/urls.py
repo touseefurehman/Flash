@@ -28,7 +28,7 @@ urlpatterns = [
     path('rent/', views.rent, name='rent'),
     path('lend/', views.lend, name='lend'),
     path('list_an_item/', views.list_an_item, name='listlend'),
-
+    path('search_by_category/', views.camera, name='search_by_category'),
     
 
     
