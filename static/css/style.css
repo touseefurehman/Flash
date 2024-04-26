@@ -240,18 +240,31 @@
 }
 .para_before_rental {
     font-family: Montserrat;
-    font-size: 22px;
+    font-size: medium;
     font-weight: 500;
     color: rgba(0, 84, 148, 0.8);
 }
 .para_before_rental span {
     color: rgba(150, 150, 150, 1);
 }
+.left_img_main{
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    margin: auto;
+
+}
+.left_img_main img{
+    height: 250px;
+    position: absolute;
+    left: -20px;
+    top: -50px;
+}
 .right_img_main{
     position: relative;
     width: 100%;
     max-width: 340px;
-    margin-left: auto;
+    margin: auto;
 }
 .right_img_main img{
     height: 250px;
@@ -423,7 +436,6 @@ label {
 
 .hero h6 {
     font-family: Nunito Sans;
-    font-size: 18px;
     font-weight: 600;
     color: white;
 
@@ -481,9 +493,18 @@ label {
 
 
 
+.search-rent-btn{
 
 
 
+
+font-family: Poppins;
+font-size: 18px;
+font-weight: 600;
+color: white;
+
+background: rgba(0, 84, 148, 1);
+}
 
 
 
@@ -555,5 +576,10 @@ label {
         font: montserrat;
         font-weight: 700;
         font-size: 30px;
+    }
+    .right_img_main img{
+   
+        top: 0;
+    
     }
 }

@@ -31,13 +31,14 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
-def lender(request):
+def rent(request):
+    return render(request,'rent.html')
+
+def lend (request):
     return render(request,'lend.html')
+
 def list_an_item(request):
     return render(request,'list_an_item.html')
-
-
-
 
 
 
