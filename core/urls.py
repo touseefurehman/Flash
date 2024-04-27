@@ -23,14 +23,15 @@ urlpatterns = [
     path('signin', views.signin, name='signin'),
     path('forget/', views.forget, name='forget'),
     path('reset/', views.pass_reset, name='reset'),
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('signup/', views.signup, name='signup'),
-    path('/', views.rent, name='rent'),
+    path('rent/', views.rent, name='rent'),
     path('lend/', views.lend, name='lend'),
     path('list_an_item/', views.list_an_item, name='listlend'),
     path('search_by_category/', views.camera, name='search_by_category'),
     path('pdp/', views.pdp, name='pdp'),
-
+    path('profile/', views.profile, name='profile'),
+    path('withdraw/', views.withdraw, name='withdraw'),
     
 
     

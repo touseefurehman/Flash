@@ -49,3 +49,8 @@ def camera(request):
 
 def pdp(request):
     return render(request,'pdp.html')
+
+def profile(request):
+    return render(request,'profile.html')
+def withdraw(request):
+    return render(request,'withdraw.html')

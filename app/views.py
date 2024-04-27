@@ -16,7 +16,5 @@ def rental(request):
 def rental_list(request):
     return render(request,'rental_list.html')
 
-def profile(request):
-    return render(request,'profile.html')
 def sign(request):
     return render(request,'signin.html')
