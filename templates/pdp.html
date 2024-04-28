@@ -184,21 +184,12 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   
     <div class="first">
         <div class="container">
             <div class="row g-4 mt-5">
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -227,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -256,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -285,7 +276,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -320,7 +311,7 @@
     <div class="secound">
         <div class="container">
             <div class="row g-4 mt-5">
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -349,7 +340,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -378,7 +369,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -407,7 +398,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card border-0">
                         <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -442,10 +433,6 @@
 
 
 
-
-
-
-
     <script>
         // JavaScript to toggle visibility of the second section
         document.addEventListener("DOMContentLoaded", function() {
@@ -468,7 +455,18 @@
 
 
 
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var button = document.getElementById("viewAllBtn");
+            button.addEventListener("click", function() {
+                if (button.textContent === "View All") {
+                    button.textContent = "Hide";
+                } else {
+                    button.textContent = "View All";
+                }
+            });
+        });
+    </script>
 
 
 
