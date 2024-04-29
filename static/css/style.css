@@ -451,7 +451,6 @@ label {
 
 
 
-
 font-family: Poppins;
 font-size: 18px;
 font-weight: 600;
@@ -462,7 +461,6 @@ background: rgba(0, 84, 148, 1);
 
 
 
-/* Add your custom styles here */
 
 .title-label {
     font-family: Poppins;
@@ -546,6 +544,68 @@ background: rgba(0, 84, 148, 1);
     font-weight: 500;
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.king-container {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.king-heading {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.king-image {
+    width: 166px;
+    height: 166px;
+}
+
+.king-name {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.king-email {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(150, 150, 150, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 786px) {

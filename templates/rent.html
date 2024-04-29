@@ -206,7 +206,12 @@
 
 <div class="container">
     <div style="float: right;" class="mt-5">
-        <button class="btn btn-lg btn-block search-rent-btn"> <a style="text-decoration: none;color: white;" href="{% url 'search_by_category' %}"> Search and rent</a></button>
+        <a style="text-decoration: none;color: white;" href="{% url 'search_by_category' %}">
+        <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button" id="editProfileButton">
+            <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
+                Search and rent
+            </h1>
+        </button></a>
     </div></div>
 <div style="padding-top: 150px; height:40px ;">
       {% endblock %}
