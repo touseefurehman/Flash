@@ -634,7 +634,13 @@ margin-top: 180px;
 
 }
 
-
+.pal{
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+  
+    text-align: center;
+    }
 
 
 
@@ -642,7 +648,13 @@ margin-top: 180px;
     .search-button {
         padding-top: 5px;
     }
-
+    .roo{
+      
+        flex-direction: column-reverse;
+    }
+    .display1{
+        display: none;
+    }
     .headings h2 {
         font: montserrat;
         font-weight: 700;

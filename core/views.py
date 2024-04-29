@@ -26,7 +26,7 @@ def signup(request):
             user.save()
             
           
-            return redirect('home')  
+            return redirect('rent')  
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
