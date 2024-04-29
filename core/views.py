@@ -54,3 +54,8 @@ def profile(request):
     return render(request,'profile.html')
 def withdraw(request):
     return render(request,'withdraw.html')
+
+
+
+def inbox(request):
+    return render(request,'inbox.html')

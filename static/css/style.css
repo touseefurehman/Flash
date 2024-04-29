@@ -58,7 +58,7 @@
 
 .camera_page_s1 {
     background-color: #005494;
-
+    padding: 20px;
     top: 200px;
     left: 150px;
     gap: 0px;
@@ -73,6 +73,7 @@
     font-weight: 800;
     text-align: center;
     color: white;
+    max-width: 700px; margin: auto;
 }
 
 
@@ -594,15 +595,44 @@ background: rgba(0, 84, 148, 1);
 
 
 
+.profile_image .img1 {
+    width: 100%; /* Ensures the image fills the circle */
+    height: 100%; /* Ensures the image fills the circle */
+}
+
+
+.profile_image {
+    width: 136px; /* Adjust the width as needed */
+    height: 136px; /* Adjust the height as needed */
+    border: 0px solid black;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures image stays within the circle */
+}
 
 
 
 
+.s1_button{
+    width:198px;
+    height:60px;
+    border-radius:16px;
+    background:rgba(0, 84, 148, 1);
+    position: relative;
+    left: -20px;
+    border: none;
+    color: white;
+}
+
+
+
+.center2 {
+
+margin-top: 180px;
 
 
 
 
-
+}
 
 
 
@@ -622,5 +652,12 @@ background: rgba(0, 84, 148, 1);
    
         top: 0;
     
+    }
+    .camera_page_s1 h1 {
+   font-size: 25px;
+    }
+    .s1_button{
+    width: 100px;
+  
     }
 }

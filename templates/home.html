@@ -1,247 +1,194 @@
-{% extends "base.html" %}
-{% load static %}
+{% load static %} <!-- base.html -->
+<!doctype html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rent and lend</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
 
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-md-7">
-            <div class="text-left">
-                <div class="headings">
-                    <h2>Rent <span class="span_blue"> Cameras</span></h2>
-                    <h2> From <span class="span_blue"> People </span> In</h2>
-                    <h2>Your Community</h2>
-                </div>
-                <h6
-                    style="font-family: Montserrat;font-size: 16px;font-weight: 400;color: rgba(74, 82, 90, 1);"
-                    class="pt-5"> Enjoy the item without the burden to</h6>
-                <h6 style="font-family: Montserrat;
+<body>
+    <nav class="navbar navbar-expand-lg" style="position: fixed;">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'rent' %}">
+                <img src="{% static 'image/nav/Elephant Please.png' %}" alt="..">
+                <img src="{% static 'image/nav/elephant (1) 1 (Traced).png' %}" alt>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'rent' %}">Rent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'lend' %}">Lend</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary">Sign In</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="text-center mt-5" style="margin-left: auto;padding-top: 100px;">
+                    <div class="headings">
+                        <h2>Rent <span class="span_blue"> Cameras</span></h2>
+                        <h2> From <span class="span_blue"> People </span> In</h2>
+                        <h2>Your Community</h2>
+                    </div>
+                    <h6 style="font-family: Montserrat;font-size: 16px;font-weight: 400;color: rgba(74, 82, 90, 1);"
+                        class="pt-5"> Enjoy the item without the burden to</h6>
+                    <h6 style="font-family: Montserrat;
                     font-size: 16px;
                     font-weight: 400;
                   
-                    color: rgba(74, 82, 90, 1);"> own and at a fraction of the
-                    price.</h6>
+                    color: rgba(74, 82, 90, 1);"> own and at a fraction of the price.</h6>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5" style="padding-right: 0%;">
-            <div
-                style="height: 500px;background: linear-gradient(0deg, #F0F0F0, #F0F0F0),
+            <div class="col-md-5" style="padding-right: 0%;">
+                <div style="height: 500px;background: linear-gradient(0deg, #F0F0F0, #F0F0F0),
                 linear-gradient(0deg, #EDF7FE, #EDF7FE);
-                
+                position: relative
+                ;top: -60;
                 border-bottom-left-radius: 130px;
                 "></div>
-        </div>
-    </div>
-</div>
-<div class="sharethejoy">
-    <div class="container mt-5" style="max-width: 800px;">
-        <div class="row">
-            <div class="col-sm text-center">
-                <img src="{% static 'image/nav/image 25.png' %}" class="img "
-                    alt="Image 1">
-                <div class="text-center home_ma">
-                    <h1> Share the Joy</h1>
-                    <h2>grow closer</h2>
-                    <h2>Take part in the community.</h2>
-                </div>
-            </div>
-            <div class="col-sm text-center">
-                <img src="{% static 'image/nav/image 26.png' %}" class="img"
-                    alt="Image 1">
-                <div class="text-center home_ma">
-                    <h1> Save money</h1>
-                    <h2>Buy less. Rent on demand for </h2>
-                    <h2>fraction of the price.</h2>
-                </div>
-            </div>
-            <div class="col-sm text-center">
-                <img src="{% static 'image/nav/image 27.png' %}" class="img"
-                    alt="Image 1">
-                <div class="text-center home_ma">
-                    <h1> Help the planet</h1>
-                    <h2>Live greener. Reduce waste.</h2>
-                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="center2">
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-
-                <div style="max-width: 500px; margin-left: auto;">
-                    <h1 class="before_rental">Rent to Save and Be Green</h1>
-                    <div class="mt-2">
-                        <h2 class="para_before_rental"><span>Elephant Please
-                                provides a secured online platform where you can
-                                enjoy a diverse range of items
-                                at an affordable price. Renting allows you to
-                                enjoy items without worrying about budgets and
-                                storage problems. Not to mention that you can
-                                try out different things without buying all of
-                                them; for example, rent different camera lenses
-                                to obtain various effects.</span></h2>
+    <div class="container">
+        <div class="sharethejoy " style="padding-top: 100px;">
+            <div class="container mt-5" style="max-width: 800px;">
+                <div class="row">
+                    <div class="col-sm text-center">
+                        <img src="{% static 'image/nav/image 25.png' %}" class="img " alt="Image 1">
+                        <div class="text-center home_ma">
+                            <h1> Share the Joy</h1>
+                            <h2>grow closer</h2>
+                            <h2>Take part in the community.</h2>
+                        </div>
                     </div>
-                </div></div>
-                <div class="col-lg-6 col-sm-12 mt-5">
+                    <div class="col-sm text-center">
+                        <img src="{% static 'image/nav/image 26.png' %}" class="img" alt="Image 1">
+                        <div class="text-center home_ma">
+                            <h1> Save money</h1>
+                            <h2>Buy less. Rent on demand for </h2>
+                            <h2>fraction of the price.</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm text-center">
+                        <img src="{% static 'image/nav/image 27.png' %}" class="img" alt="Image 1">
+                        <div class="text-center home_ma">
+                            <h1> Help the planet</h1>
+                            <h2>Live greener. Reduce waste.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center2 ">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div style="max-width: 500px; ">
+                        <h1 class="before_rental"> <span style="color: #005494;
+                    "> Rent</span> to Save and Be Green</h1>
+                        <div class="mt-2">
+                            <p style="color: #969696;line-height: 35px;
+                    "><span>Elephant Please provides a secured online platform where you can enjoy a diverse range of
+                                    items at an affordable price. Renting allows you to enjoy items without worrying
+                                    about budgets and storage problems. Not to mention that you can try out different
+                                    things without buying all of them; for example, rent different camera lenses to
+                                    obtain various effects.</span></p>
+                            <h6><b> How Renting Works</b></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 ">
                     <div class="right_img_main">
-                        <img src="{% static 'image/nav/Bg.png' %}"
-                            alt="...">
+                        <img src="{% static 'image/nav/image 28.png' %}" alt="...">
+                    </div>
+                    <div class="bg_div"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 " style="padding-top: 100px;">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 mt-5">
+                    <div class="left_img_main">
+                        <img src="{% static 'image/nav/1122.png' %}" alt="...">
                         <div class="bg_div"></div>
                     </div>
                 </div>
-            
-        </div>
-    
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12 mt-5">
-                        <div class="left_img_main">
-                            <img src="{% static 'image/nav/Bg (2).png' %}"
-                                alt="...">
-                            <div class="bg_div"></div></div>
+                <div class="col-lg-6 col-sm-12">
+                    <div style="max-width: 500px; margin-left: auto;">
+                        <h1 class="before_rental">Lend to start earning</h1>
+                        <div class="mt-2">
+                            <p style="color: #969696;line-height: 35px;">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <a style="text-decoration: none;color: white;" href="{% url 'search_by_category' %}">
+                            <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);"
+                                class="btn inbox-button" id="editProfileButton">
+                                <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
+                                    List and earn </h1>
+                            </button></a>
                     </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <div style="max-width: 500px; margin-left: auto;">
-                            <h1 class="before_rental">Rent to Save and Be
-                                Green</h1>
-                            <div class="mt-2">
-                                <h2 class="para_before_rental"><span> Elephant
-                                        Please provides a secured online
-                                        platform where you can enjoy a diverse
-                                        range of items
-                                        at an affordable price. Renting allows
-                                        you to enjoy items without worrying
-                                        about budgets and
-                                        storage problems. Not to mention that
-                                        you can try out different things without
-                                        buying all of
-                                        them; for example, rent different camera
-                                        lenses to obtain various
-                                        effects.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="explore_item">
+        <div class="access mt-5">
+            <div class="container">
+                <div style="background: rgba(236, 247, 255, 1); border-radius: 32px;position: relative;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div style="padding: 40px;">
+                                <h1>Access on the go</h1>
+                                <p>Elephant Please is a responsive website, open it </p>
+                                <p>on any browser and use it on your devices. Rent</p>
+                                <p> more, save more. Lend more, earn more.</p>
                             </div>
-
+                        </div>
+                        <div class="col-lg-6">
+                            <img style="position: relative;top: -60px;" src="{% static 'image/nav/2441 2.png' %}"
+                                class="card-img" alt="Image 1">
                         </div>
                     </div>
                 </div>
             </div>
-</div>
-
-<div class="explore_item">
-                <div class="container mt-5">
-                    <h1>Explore Item Categories</h1>
-                    <div
-                        style="display: flex; justify-content: space-between; ">
-
-                    <div style="max-width: 500px;">
-                        <p class="para_before_rental"><span> Hover and select to view items available to be
-                            rented. From Film & Photography to Drones to Clothes & Shoes. If you can think
-                            of it, you can find it.</span></p>
-                        </div>
-                    
-
-
-
-                       
-                        <div>
-                            <button type="button"
-                                class="btn btn-outline-primary custom-white-btn">View
-                                All</button>
-                        </div>
-</div>
-<div class="row">
-                        <div class="col-lg-4">
-                            <div class="card border-0">
-                                <img
-                                    src="{% static 'image/nav/Rectangle 27.png' %}"
-                                    class="card-img" alt="Image 1" style>
-                                <div class="card-img-overlay"
-                                    style="background: linear-gradient(180deg, rgba(0, 84, 148, 0) 0%, #005494 100%);">
-                                    <p class="card-text">Film & Photography</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="card-img" alt="Image 1">
-                                </div>
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="card-img" alt="Image 1">
-                                </div>
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="card-img" alt="Image 1">
-                                </div>
-                            </div>
-                            <!-- Second Row -->
-                            <div class="row mt-2">
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="card-img" alt="Image 1">
-                                </div>
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="card-img" alt="Image 1">
-                                </div>
-                                <div class="col-lg-3">
-                                    <img
-                                        src="{% static 'image/nav/Rectangle 27.png' %}"
-                                        class="img-fluid" alt="Image 1">
-                                </div>
-                            </div>
-</div>   
- <div class="access mt-5">
-                            <div class="container">
-
-                                <div
-                                    style="background: rgba(236, 247, 255, 1); border-radius: 32px;">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div style="padding: 40px;">
-                                                <h1>Access on the go</h1>
-                                                <p>Elephant Please is a
-                                                    responsive website, open it
-                                                </p>
-                                                <p>on any browser and use it on
-                                                    your devices. Rent</p>
-                                                <p> more, save more. Lend more,
-                                                    earn more.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <img
-                                                src="{% static 'image/nav/2441 2.png' %}"
-                                                class="card-img" alt="Image 1">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                     
-</div>
-               
-
-    <div class="container text-center">
-        <h1>rental reviews</h1>
-
-        <p style="max-width: 400px;align-items: center;">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.</p>
+        </div>
+        <div class="container text-center">
+            <h1>rental reviews</h1>
+            <p style="max-width: 400px;align-items: center;">To an English person, it will seem like simplified
+                English, as a skeptical Cambridge friend of mine told me what Occidental is.</p>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
@@ -252,7 +199,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
@@ -263,7 +211,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
@@ -274,27 +223,21 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-
+        </div>
     </div>
-    
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  
+    </div> {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
 
-
-
-
-                
-
-                {% endblock %}
+</html>
