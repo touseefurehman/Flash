@@ -25,21 +25,56 @@
                     <h1>Sign up</h1>
                 </div>
                 <div class="forms_signup">
-                    <div class="form-group p-5">
-                        <form method="post">
+                    <div style="
+                    font-family: Poppins;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #6D6D6D;
+
+                    " class="form-group p-5">
+                    
+                        <form action="" method="POST" >
                             {% csrf_token %}
-                            {{ form.as_p }}
-                            <div class="button11">
-                                <div class="text-center">
-                                    <button style="width: 100%;
-                                                    height: 56px;
-                                                    gap: 0px;
-                                                    opacity: 0px;
-                                                    " type="submit" class="custom-sign-in-btn btn "> Sign up </button>
-                                </div>
+                            
+                            {% for fm in form %}
+                                {{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }} <br><br>
+                            {% endfor %}
+                                
+                          
+                            <div class="text-center">
+                                <button style="width: 100%;
+                                                height: 56px;
+                                                gap: 0px;
+                                                opacity: 0px;
+                                                " type="submit" class="custom-sign-in-btn btn "> Sign up </button>
                             </div>
+                    
                         </form>
                         
+                        {% if messages %}
+                        {% for message in messages %}
+                            <small {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</small>
+                        {% endfor %}
+                    {% endif %}
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
                         </div>
                         </form>
                         <div class="or">

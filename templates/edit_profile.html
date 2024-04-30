@@ -1,0 +1,156 @@
+{% extends "base.html" %} 
+{% load static %}
+ {% block content %} 
+ <div class="container mb-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <h1 class="mt-5" style="font-family:Poppins;font-size:24px;font-weight:600;">Profile Details</h1>
+            </div>
+            <div class="text-center">
+                <div class="container d-flex justify-content-center align-items-center ">
+                    <div class="text-center">
+                        <div class="profile_image mt-5">
+                            <img class="img1" id="preview_image" src="{% static 'image/nav/Group 1961.png' %}"
+                                alt="Profile Picture">
+                        </div>
+                        <input type="file" id="upload-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <h1 style="font-family:Poppins;font-size:22px;font-weight:600;">John Doe</h1>
+                <h2 style="font-family:Poppins;font-size:16px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                    johndoe@gmail.com</h2>
+            </div>
+            <div>
+                <h1 class="mt-5"
+                    style="font-family:Poppins;font-size:16px;font-weight:400;color:rgba(150, 150, 150, 1);">Your
+                    statistics</h1>
+                <div style="padding:3px;border:1px solid rgba(234, 234, 234, 1);border-radius:10px;padding:10px;">
+                    <h2 style="font-family:Poppins;font-size:40px;font-weight:500;">$0.00</h2>
+                    <div style="display:flex;align-items:center;">
+                        <div>
+                            <h1
+                                style="font-family:Poppins;font-size:16px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                                Lifetime earnings</h1>
+                        </div>
+                        <div><img class="img-coin" src="{% static 'image/nav/coin.png' %}" alt></div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div style="padding:3px;border:1px solid rgba(234, 234, 234, 1);border-radius:10px;">
+                            <h1>0</h1>
+                            <h2
+                                style="font-family:Poppins;font-size:12px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                                Rental</h2>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="padding:3px;border:1px solid rgba(234, 234, 234, 1);border-radius:10px;">
+                            <h1>0</h1>
+                            <h2
+                                style="font-family:Poppins;font-size:12px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                                Day with us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div style="padding:3px;border:1px solid rgba(234, 234, 234, 1);border-radius:10px;">
+                            <h1>0</h1>
+                            <h2
+                                style="font-family:Poppins;font-size:12px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                                Lend</h2>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="padding:3px;border:1px solid rgba(234, 234, 234, 1);border-radius:10px;">
+                            <h1>0</h1>
+                            <h2
+                                style="font-family:Poppins;font-size:12px;font-weight:400;color:rgba(150, 150, 150, 1);">
+                                Unread message</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="alternateProfileContent" class="col-md-9 mt-5">
+            <div class="top_button d-flex justify-content-end gap-2">
+                <div>
+                    <a style="text-decoration: none;" href="{% url 'forget' %}"> <button
+                            style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);"
+                            class="btn inbox-button" id="editProfileButton">
+                            <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;"> Reset
+                                Password </h1>
+                        </button></a>
+                </div>
+                <div>
+                    <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);"
+                        class="btn inbox-button" id="editProfileButton">
+                        <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;"> Save </h1>
+                    </button>
+                </div>
+            </div>
+            <div class="formss mt-5" style="border:1px solid rgba(234, 234, 234, 1);border-radius:10px;padding:30px;">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h1
+                                    style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                    First Name</h1>
+                            </label>
+                            <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h1
+                                    style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                    Email Address</h1>
+                            </label>
+                            <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h1
+                                    style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                    Location</h1>
+                            </label>
+                            <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h1
+                                    style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                    Last Name</h1>
+                            </label>
+                            <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h1
+                                    style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                    Phone Number</h1>
+                            </label>
+                            <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
+                        </div>
+                    </div>
+                </div>
+                <div class="describation">
+                    <div class="mb-3">
+                        <label for="profileDescription" class="form-label">
+                            <h1
+                                style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">
+                                Profile Description</h1>
+                        </label>
+                        <textarea class="form-control" id="profileDescription" rows="7" maxlength="200"></textarea>
+                        <div id="wordCount" class="form-text">0/200 words</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> {% endblock %}

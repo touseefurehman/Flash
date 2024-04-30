@@ -1,27 +1,57 @@
-from django.shortcuts import render,HttpResponse,redirect
+from django.shortcuts import render,HttpResponse,redirect,HttpResponseRedirect
 from app.forms import SignUpForm
 from app.models import User
-from .forms import signupform
+from .forms import SignUpForm
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate,login,logout
 
-def reg(request):
-    if request.method == "Post":
-      fm = signupform
-      if fm.is_valid():
-          fm.save()
+def signup(request):
+    if request.method == "POST":
+        fm = SignUpForm(request.POST)
+        if fm.is_valid():
+            messages.success(request,'Email has been send to your email address please Activate that')
+            fm.save()
     else:
-        fm = signupform()
-    return render(request,'reg.html', {'form':fm})
+        fm = SignUpForm()
+    return render(request, 'signup.html', {'form': fm})
+
 
 
 def signin(request):
-    return render(request,'signin.html')
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():  # Perform validation
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('rent') 
+    else:
+        form = AuthenticationForm()
+    return render(request, 'signin.html', {'form': form})
+
+
+
+
+
+
+
+
+
+def checkout(request):
+    return render(request,'checkout.html')
+
+
+
 def forget(request):
     return render(request,'forget.html')
 def pass_reset(request):
     return render(request,'pass_reset.html')
 def home(request):
     return render(request,'home.html')
-def signup(request):
+
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -71,10 +101,8 @@ def inbox(request):
     return render(request,'inbox.html')
 def search(request):
     return render(request,'search.html')
-
-
-
-
+def edit_profile(request):
+    return render(request,'edit_profile.html')
 
 def rental(request):
     return render(request,'rental.html')

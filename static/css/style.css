@@ -20,7 +20,12 @@
 .navbarbg {
     background-color: #E6E6E6;
 }
-
+#id_username{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+}
 .headings h2 {
     font: montserrat;
     font-weight: 700;
@@ -844,6 +849,72 @@ margin-top: 180px;
 
 
 }
+#id_password1{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+}
+#id_password2{
+    border: none;
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    outline: none;
+    width: 100%;
+}
+.checkh1{
+    font-family: Poppins;
+font-size: 25px;
+font-weight: 600;
+line-height: 45px;
+text-align: left;
+
+
+}
+.too{
+    font-family: Poppins;
+font-size: 16px;
+color:
+rgba(109, 109, 109, 1);
+}
+.too input{
+    width: 492px;
+height: 70px;
+top: 637px;
+left: 150px;
+gap: 0px;
+border: 1px solid #D4D4D4
+;
+border-radius: 12px;
+}
+.sss1 {
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .sss1 h1 {
+    font-family: Montserrat;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 81.67px;
+    text-align: left;
+  }
+  
+  .sss1 input[type="text"] {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 80px;
+    box-shadow: 0px 19px 29px 0px #3E357824;
+    border: none;
+    padding-left: 40px;
+  }
+  
+  .sss1 button {
+    position: sticky;
+    height: 80px;
+    font-weight: 600;
+  }
+  
+
 
 .pal{
     font-family: Montserrat;

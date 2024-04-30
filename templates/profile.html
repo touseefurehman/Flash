@@ -98,12 +98,13 @@
                                 </button></a>
                         </div>
                         
-                        <div>
+                        <div> <a style="text-decoration: none;color: white;" href="{% url 'edit_profile' %}">
                             <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button" id="editProfileButton">
                                 <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
                                     Edit Profile
                                 </h1>
-                            </button>
+                            </button></a>
+            
                         </div>
                         
                     </div>
@@ -158,102 +159,4 @@
             </div>
 
 
-            <div id="alternateProfileContent"  class="col-md-9 mt-5" style="display: none;">
-                <div class="top_button d-flex justify-content-end gap-2" > <div>
-                    <a style="text-decoration: none;" href="{% url 'forget' %}">  <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button" id="editProfileButton">
-                        <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
-                            Reset Password
-                        </h1>
-                    </button></a>
-                </div>
-                
-                <div>
-                    <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button" id="editProfileButton">
-                        <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
-                            Save
-                        </h1>
-                    </button>
-                </div></div>
-
-
-
-
-                <div class="formss mt-5" style="border:1px solid rgba(234, 234, 234, 1);border-radius:10px;padding:30px;">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">
-                                    <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">First Name</h1>
-                                </label>
-                                <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">
-                                    <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">Email Address</h1>
-                                </label>
-                                <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">
-                                    <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">Location</h1>
-                                </label>
-                                <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">
-                                    <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">Last Name</h1>
-                                </label>
-                                <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">
-                                    <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">Phone Number</h1>
-                                </label>
-                                <input type="text" class="form-1" style="border-radius:10px;" id="firstName">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="describation">
-                        <div class="mb-3">
-                            <label for="profileDescription" class="form-label">
-                                <h1 style="font-family:Poppins;font-size:20px;font-weight:500;line-height:38px;text-align:left;">Profile Description</h1>
-                            </label>
-                            <textarea class="form-control" id="profileDescription" rows="7" maxlength="200"></textarea>
-                            <div id="wordCount" class="form-text">0/200 words</div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-            </div>
-
-
-
-            <script>
-                // Function to switch between profile content and alternate profile content
-                function switchProfileContent() {
-                    var profileContent = document.getElementById('profileContent');
-                    var alternateProfileContent = document.getElementById('alternateProfileContent');
-            
-                    // Toggle visibility
-                    if (profileContent.style.display === 'none') {
-                        profileContent.style.display = 'block';
-                        alternateProfileContent.style.display = 'none';
-                    } else {
-                        profileContent.style.display = 'none';
-                        alternateProfileContent.style.display = 'block';
-                    }
-                }
-            
-                // Add event listener to the Edit Profile button
-                document.getElementById('editProfileButton').addEventListener('click', switchProfileContent);
-            </script>
-
-
-
-            
-
-        </div>
-    </div>
     {% endblock %}

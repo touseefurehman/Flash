@@ -32,10 +32,12 @@ urlpatterns = [
     path('search_by_category/', views.camera, name='search_by_category'),
     path('pdp/', views.pdp, name='pdp'),
     path('profile/', views.profile, name='profile'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
     path('withdraw/', views.withdraw, name='withdraw'),
     path('inbox/', views.inbox, name='inbox'),
     path('search/', views.search, name='search'),  
     path('rental/', views.rental, name='rental'),  
-    path('rental_list/', views.rental_list, name='rental_list'),  
-    path('reg/', views.reg, name='reg', ), 
+    path('rental_list/', views.rental_list, name='rental_list'), 
+     path('checkout/', views.checkout, name='checkout'),  
+   
 ]
