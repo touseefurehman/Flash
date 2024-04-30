@@ -1,7 +1,17 @@
 from django.shortcuts import render,HttpResponse,redirect
 from app.forms import SignUpForm
 from app.models import User
-# Create your views here.
+from .forms import signupform
+
+def reg(request):
+    if request.method == "Post":
+      fm = signupform
+      if fm.is_valid():
+          fm.save()
+    else:
+        fm = signupform()
+    return render(request,'reg.html', {'form':fm})
+
 
 def signin(request):
     return render(request,'signin.html')

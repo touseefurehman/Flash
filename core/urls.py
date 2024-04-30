@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('1/',include('app.urls' )),
@@ -34,9 +35,7 @@ urlpatterns = [
     path('withdraw/', views.withdraw, name='withdraw'),
     path('inbox/', views.inbox, name='inbox'),
     path('search/', views.search, name='search'),  
-     path('rental/', views.rental, name='rental'),  
-      path('rental_list/', views.rental_list, name='rental_list'),  
-
-    
-
+    path('rental/', views.rental, name='rental'),  
+    path('rental_list/', views.rental_list, name='rental_list'),  
+    path('reg/', views.reg, name='reg', ), 
 ]

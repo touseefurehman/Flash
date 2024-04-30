@@ -6,8 +6,7 @@ urlpatterns = [
     
   
     path('4/', views.checkout),
-    path('5/', views.rental),
-    path('6/', views.rental_list),
+
     
     path('signin/', views.sign),
     
