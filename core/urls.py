@@ -34,6 +34,8 @@ urlpatterns = [
     path('withdraw/', views.withdraw, name='withdraw'),
     path('inbox/', views.inbox, name='inbox'),
     path('search/', views.search, name='search'),  
+     path('rental/', views.rental, name='rental'),  
+      path('rental_list/', views.rental_list, name='rental_list'),  
 
     
 

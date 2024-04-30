@@ -32,18 +32,62 @@
 
 }
 
-.headings {
+.headings p {
     font: montserrat;
     font-weight: 700;
-    font-size: 67px;
-    line-height: 81.67px;
+    font-size: 42px;
+
+}
+.headings p span{
+ color: #005494;
+}
+
+.home-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.home-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(74, 82, 90, 1);
+}
+.home-col11 {
+    padding-right: 0%;
+}
+
+.home-display {
+    height: 500px;
+    background: linear-gradient(0deg, #F0F0F0, #F0F0F0),
+                linear-gradient(0deg, #EDF7FE, #EDF7FE);
+    position: relative;
+    top: -60px;
+    border-bottom-left-radius: 130px;
+}
+.custom-card112233 {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+
+
+.home-container11 {
+    max-width: 550px;
+    padding-top: 100px;
+    margin: auto;
 
 }
 
-
-
-
-
+.home-column {
+    text-align: center;
+}
+.home-subtitle{
+    color:#969696 ;
+}
 
 
 .camera_page_s1 p {
@@ -54,6 +98,173 @@
     color: white;
 
 }
+
+
+
+.max-width-container {
+    max-width: 500px;
+}
+
+.rent-highlight {
+    color: #005494;
+}
+
+.rent-description {
+    color: #969696;
+    line-height: 35px;
+}
+.mt-5-container {
+    padding-top: 100px;
+}
+
+.max-width-container {
+    max-width: 500px;
+    margin-left: auto;
+}
+
+.rent-description {
+    color: #969696;
+    line-height: 35px;
+}
+
+
+
+.inbox-link {
+    text-decoration: none;
+    color: white;
+}
+
+.inbox-button {
+    width: 198px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(0, 84, 148, 1);
+}
+
+.inbox-button-text {
+    font-family: Poppins;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+
+.access-container {
+    padding-top: 100px;
+}
+
+.access-content {
+    background: rgba(236, 247, 255, 1);
+    border-radius: 32px;
+    position: relative;
+}
+
+.access-text {
+    padding: 60px;
+    padding-top: 120px;
+}
+
+.access-text h1 {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.access-text p {
+    max-width: 400px;
+}
+
+
+
+
+.rental-reviews {
+    background: #ECF7FF;
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.review-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.review-header {
+    display: flex;
+}
+
+.review-header img {
+    border-radius: 50%;
+}
+
+.review-name {
+    color: #005494;
+}
+
+.review-quote {
+    font-style: italic;
+    color: rgba(150, 150, 150, 1);
+}
+
+.card-img {
+    position: relative;
+    top: -60px;
+}
+
+
+
+
+
+
+
+.newsletter {
+    margin-top: 100px;
+}
+
+
+
+.newsletter-info {
+    margin: auto;
+    max-width: 800px;
+    color: rgba(150, 150, 150, 1);
+}
+
+.privacy-policy {
+    color: #005494;
+}
+
+.newsletter-form {
+    padding-top: 10px;
+}
+
+.newsletter-input {
+    box-shadow: 0px 10.67px 56px 0px #22272F0A;
+    border: none;
+    border-radius: 16px;
+}
+
+.newsletter-disclaimer {
+    padding-bottom: 100px;
+    color: rgba(150, 150, 150, 1);
+    margin: auto;
+}
+
+
+
+.custom-text1122 {
+    color: #969696;
+    max-width: 500px;
+  }
+  .custom-button1122 {
+    border: 1px solid #005494;
+    padding: 10px;
+    border-radius: 12px;
+    color: #005494;
+  }
 
 
 .camera_page_s1 {

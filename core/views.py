@@ -61,3 +61,12 @@ def inbox(request):
     return render(request,'inbox.html')
 def search(request):
     return render(request,'search.html')
+
+
+
+
+
+def rental(request):
+    return render(request,'rental.html')
+def rental_list(request):
+    return render(request,'rental_list.html')
