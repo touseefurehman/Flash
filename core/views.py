@@ -59,3 +59,5 @@ def withdraw(request):
 
 def inbox(request):
     return render(request,'inbox.html')
+def search(request):
+    return render(request,'search.html')

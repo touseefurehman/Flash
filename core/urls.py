@@ -32,7 +32,8 @@ urlpatterns = [
     path('pdp/', views.pdp, name='pdp'),
     path('profile/', views.profile, name='profile'),
     path('withdraw/', views.withdraw, name='withdraw'),
-    path('inbox/', views.inbox, name='inbox'),  
+    path('inbox/', views.inbox, name='inbox'),
+    path('search/', views.search, name='search'),  
 
     
 

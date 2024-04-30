@@ -642,8 +642,26 @@ margin-top: 180px;
     text-align: center;
     }
 
-
-
+    @media (max-width: 992px){
+        .roo{
+      
+            flex-direction: column-reverse;
+        }
+        .img-coin{
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 750px) {
+        .inbox {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .inbox-button {
+            margin-bottom: 10px; /* Adjust spacing between buttons */
+        }
+    }
+    
 @media (max-width: 786px) {
     .search-button {
         padding-top: 5px;
@@ -672,4 +690,5 @@ margin-top: 180px;
     width: 100px;
   
     }
+    
 }

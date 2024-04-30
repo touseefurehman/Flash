@@ -41,7 +41,7 @@
                         <h2 style="font-family:Poppins;font-size:40px;font-weight:500;">$0.00</h2>
                         <div style="display:flex;align-items:center;">
                             <div><h1 style="font-family:Poppins;font-size:16px;font-weight:400;color:rgba(150, 150, 150, 1);">Lifetime earnings</h1></div>
-                            <div><img src="{% static 'image/nav/coin.png' %}" alt></div>
+                            <div><img class="img-coin" src="{% static 'image/nav/coin.png' %}" alt></div>
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -88,13 +88,14 @@
             
             <div id="profileContent" class="col-md-9 mt-5">
                 <div class="top_button">
-                    <div class="inbox d-flex justify-content-between">
+                    <div class="inbox d-flex justify-content-between ">
                         <div>
-                            <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button">
-                                <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
-                                    Inbox
-                                </h1>
-                            </button>
+                            <a style="text-decoration: none;color: white;" href="{% url 'listlend' %}">
+                                <button style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);" class="btn inbox-button" id="editProfileButton">
+                                    <h1 style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
+                                        List and earn
+                                    </h1>
+                                </button></a>
                         </div>
                         
                         <div>
