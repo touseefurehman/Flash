@@ -27,7 +27,7 @@ def signin(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('rent') 
+                return redirect('search_by_category') 
     else:
         form = AuthenticationForm()
     return render(request, 'signin.html', {'form': form})
@@ -37,6 +37,8 @@ def signin(request):
 
 
 
+def my_item(request):
+    return render(request,'my_item.html')
 
 
 
