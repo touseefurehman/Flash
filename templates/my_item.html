@@ -1,30 +1,83 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+
+
+
+
+
+
 <div class="container">
-    <div class="new_item mt-5" style="display: flex;">
-        <div>
 
-            <h1>My Rentals</h1></div>
 
-        <h1 style="margin-left: 10px; color: black;">My items</h1>
-        <div style="margin-left: auto;">
-            <a style="text-decoration: none;" href="{% url 'listlend' %}">
-                <button
-                    style="width:198px;height:60px;border-radius:16px;background:rgba(0, 84, 148, 1);"
-                    class="btn inbox-button" id="editProfileButton">
-                    <h1
-                        style="font-family:Poppins;color:white;font-size:18px;font-weight:600;margin:0;">
-                        List New Item </h1>
-                </button></a>
+
+
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button style="font-size: x-large;" class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Rental</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My item</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+                <div class="card123">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-3 custom-card border-0" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-6">
+                                        <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <p class="card-text custom-card-text">John Doe</p>
+                                            <h5 class="card-title custom-card-title">SONY PXW-X200 Full Camera</h5>
+                                            <div class="card-description">
+                                                <p class="card-text custom-card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consectetur adipiscing elit, sed do eiusmod tempo et dolore magna aliqua.</p>
+                                            </div>
+                                           
+                                            <div class="custom-card-rating"> <img src="{% static 'image/nav/star_rate.png' %}" class="img" alt="...">4.8 </div>
+                                        </div>
+                                    </div>
+                                </div>    </div>
+                            </div>
+                            
+                        <div class="col-lg-6">
+                            <div class="card-address">
+                                <p  style="margin-left: auto;" class="card-text">Ohio St. 16 H. 435 South Gate, California</p>
+                            </div>
+                            <div class="card-details mt-4">
+                                <h5 style="margin-left: auto;" class="card-price">$350</h5>
+                        </div>
+                        <button type="button" style="background: #FF3F64;border: none;" class="btn btn-primary">Inactive Rental                </button>
+                        <button type="button" style="padding: 15px; background:  #005494;;border: none;" class="btn btn-primary">Edit it:</button>
+                    </div>
+               
+        
+        </div>
         </div></div>
-    <hr>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
         <div class="card123">
             <div class="row">
                 <div class="col-lg-6">
-
-
-
                     <div class="card mb-3 custom-card border-0" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-6">
@@ -37,33 +90,35 @@
                                     <div class="card-description">
                                         <p class="card-text custom-card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consectetur adipiscing elit, sed do eiusmod tempo et dolore magna aliqua.</p>
                                     </div>
-                                    <p class="card-text custom-card-category">Category: Film & Photography</p>
+                                   
                                     <div class="custom-card-rating"> <img src="{% static 'image/nav/star_rate.png' %}" class="img" alt="...">4.8 </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>    </div>
+                    </div>
                     
-                    
-
-
-
-
-
-
-
-
-
-
                 <div class="col-lg-6">
                     <div class="card-address">
-                        <p class="card-text">Ohio St. 16 H. 435 South Gate, California</p>
+                        <p  style="margin-left: auto;" class="card-text">Ohio St. 16 H. 435 South Gate, California</p>
                     </div>
                     <div class="card-details mt-4">
-                        <h5 class="card-price">$350</h5>
+                        <h5 style="margin-left: auto;" class="card-price">$350</h5>
                 </div>
+                <button type="button" style="background: #FF3F64;border: none;" class="btn btn-primary">Inactive Rental                </button>
+                <button type="button" style="padding: 15px; background:  #005494;;border: none;" class="btn btn-primary">Edit it:</button>
             </div>
-        </div>
-    </div>
+       
+
 </div>
+</div></div>
 </div>
+  </div>
+
+
+
+
+
+</div>
+
+
 {% endblock %}

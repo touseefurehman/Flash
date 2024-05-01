@@ -35,6 +35,8 @@ def signin(request):
 
 
 
+def edit_item(request):
+    return render(request,'edit_item.html')
 
 
 def my_item(request):

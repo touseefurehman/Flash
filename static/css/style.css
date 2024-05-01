@@ -259,13 +259,44 @@
 
 .card-details h5 {
     font-weight: 800;
+    
 }
+/* External CSS */
+.pdp-flex-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pdp-heading {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(38, 50, 56, 1);
+}
+
+.pdp-paragraph {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    color: rgba(204, 204, 204, 1);
+}
+
 
 .card-rating {
     display: flex;
     align-items: center;
 }
-
+.smbut{
+    font-family: Poppins;
+    border-radius: 12px;
+font-size: 18px;
+font-weight: 600;
+padding: 18px;
+background-color: #005494;
+border: none;}
 .card-rating img {
     width: 20px;
     height: auto;
@@ -273,6 +304,91 @@
 }
 
 
+.pdp-container {
+    padding: 20px;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 32px;
+}
+
+.pdp-inner {
+    margin-top: 3px;
+}
+
+.pdp-title {
+    color: rgba(38, 50, 56, 1);
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.pdp-address {
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.pdp-info {
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.pdp-name {
+    margin-left: 10px;
+}
+
+.pdp-rating {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.pdp-rating-value {
+    margin-right: 5px;
+}
+
+.pdp-rating-reviews {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(204, 204, 204, 1);
+}
+
+.pdp-pricing {
+    margin-top: 2px;
+}
+
+.pdp-price-container {
+    padding: 12px;
+    border: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 16px;
+}
+
+.pdp-price-type {
+    font-weight: bold;
+}
+
+.pdp-price-value {
+    margin-top: 5px;
+}
+
+.pdp-price-value span {
+    color: #005494;
+}
+
+.pdp-check-btn {
+    margin-top: 4px;
+    color: white;
+    background: rgba(0, 84, 148, 1);
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    font-family: Poppins;
+font-size: 18px;
+font-weight: 600;
+
+
+}
 
 
 .custom-card-text {
@@ -306,6 +422,7 @@
 }
 .card123{
     box-shadow: 0px 2px 42px 0px #B4B2B229;
+    padding: 30px;
 
 }
 .custom-card-rating {

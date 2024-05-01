@@ -40,5 +40,6 @@ urlpatterns = [
     path('rental_list/', views.rental_list, name='rental_list'), 
     path('checkout/', views.checkout, name='checkout'),  
     path('my_item/', views.my_item, name='my_item'),  
+    path('edit_item/', views.edit_item, name='edit_item'),  
 
 ]
