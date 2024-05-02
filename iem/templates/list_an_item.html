@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %} {% block content %} <div class="container mt-5">
+    <h1>List an item</h1>
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="formss mt-5">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label title-label">Title</label>
+                                <input type="text" class="form-control" id="firstName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rentalPrice" class="form-label rental-label">Rental price (HKD)</label>
+                                <div class="row">
+                                    <div class="col"> <label for="category" class="form-label category-label">daily</label>
+                                        <input type="text" class="form-control" id="category"></div>
+                                    <div class="col"> <label for="category" class="form-label category-label">weekly</label>
+                                        <input type="text" class="form-control" id="category"></div>
+                                    <div class="col"> <label for="category" class="form-label category-label">monthly</label>
+                                        <input type="text" class="form-control" id="category"></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rentalPeriod" class="form-label period-label">Minimum rental period
+                                    (Days)</label>
+                                <input type="text" class="form-control" id="rentalPeriod">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="mb-3">
+                                <label for="category" class="form-label category-label">Category</label>
+                                <input type="text" class="form-control" id="category">
+                            </div>
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col"> <label for="marketValue" class="form-label value-label">Market
+                                            value (HKD)</label>
+                                        <input type="text" class="form-control" id="marketValue">
+                                    </div>
+                                    <div class="col"><label for="marketValue"
+                                            class="form-label value-label">Quantity</label>
+                                        <input type="text" class="form-control" id="marketValue" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="location" class="form-label location-label">Location</label>
+                                <input type="text" class="form-control" id="location">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="describation">
+                        <div class="mb-3">
+                              <label for="profileDescription" class="form-label description-label">Description</label>
+                            <textarea class="form-control" id="profileDescription" rows="7" maxlength="200"></textarea>
+                            <div id="wordCount" class="form-text">0/200 words</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+    </div>
+</div> {% endblock %}
