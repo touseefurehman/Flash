@@ -1,6 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect,HttpResponseRedirect
-from app.forms import SignUpForm
-from app.models import User
+
 from .forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
@@ -35,8 +34,7 @@ def signin(request):
 
 
 
-def edit_item(request):
-    return render(request,'edit_item.html')
+
 
 
 def my_item(request):
@@ -81,13 +79,10 @@ def rent(request):
 def lend (request):
     return render(request,'lend.html')
 
-def list_an_item(request):
-    return render(request,'list_an_item.html')
 
 
 
-def camera(request):
-    return render(request,'search_by_category.html')
+
 
 
 
@@ -112,3 +107,27 @@ def rental(request):
     return render(request,'rental.html')
 def rental_list(request):
     return render(request,'rental_list.html')
+
+
+
+
+
+
+
+
+
+
+def camera(request):
+    return render(request,'search_by_category.html')
+
+
+
+
+def edit_item(request):
+    return render(request,'edit_item.html')
+
+
+
+
+def list_an_item(request):
+    return render(request,'list_an_item.html')
