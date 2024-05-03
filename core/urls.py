@@ -1,28 +1,27 @@
-
 from django.contrib import admin
 from django.urls import path, include
-from core import views
-
+from core import views as core_views
+from items import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signin', views.signin, name='signin'),
-    path('forget/', views.forget, name='forget'),
-    path('reset/', views.pass_reset, name='reset'),
-    path('', views.home, name='home'),
-    path('signup/', views.signup, name='signup'),
-    path('rent/', views.rent, name='rent'),
-    path('lend/', views.lend, name='lend'),
-    path('list_an_item/', views.list_an_item, name='listlend'),
-    path('search_by_category/', views.camera, name='search_by_category'),
-    path('pdp/', views.pdp, name='pdp'),
-    path('profile/', views.profile, name='profile'),
-    path('edit_profile/', views.edit_profile, name='edit_profile'),
-    path('withdraw/', views.withdraw, name='withdraw'),
-    path('inbox/', views.inbox, name='inbox'),
-    path('search/', views.search, name='search'),  
-    path('rental/', views.rental, name='rental'),  
-    path('rental_list/', views.rental_list, name='rental_list'), 
-    path('checkout/', views.checkout, name='checkout'),  
-    path('my_item/', views.my_item, name='my_item'),  
-    path('edit_item/', views.edit_item, name='edit_item'),  
+    path('signin/', core_views.signin, name='signin'), 
+    path('forget/', core_views.forget, name='forget'),
+    path('reset/', core_views.pass_reset, name='reset'),
+    path('home/', core_views.home, name='home'),
+    path('signup/', core_views.signup, name='signup'),
+    path('rent/', core_views.rent, name='rent'),
+    path('lend/', core_views.lend, name='lend'),
+    path('pdp/', core_views.pdp, name='pdp'),
+    path('profile/', core_views.profile, name='profile'),
+    path('edit_profile/', core_views.edit_profile, name='edit_profile'),
+    path('withdraw/', core_views.withdraw, name='withdraw'),
+    path('inbox/', core_views.inbox, name='inbox'),
+    path('search/', core_views.search, name='search'),  
+    path('rental/', core_views.rental, name='rental'),  
+    path('rental_list/', core_views.rental_list, name='rental_list'), 
+    path('checkout/', core_views.checkout, name='checkout'),  
+    path('my_item/', core_views.my_item, name='my_item'),  
+    path('edit_item/', core_views.edit_item, name='edit_item'),  
+    path('me/',include('items.urls'),name='list_an_item'),
+    path('search_by_category/',core_views.search_by_category, name="search_by_category")
 ]

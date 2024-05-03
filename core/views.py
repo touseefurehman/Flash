@@ -106,6 +106,7 @@ def edit_profile(request):
 def rental(request):
     return render(request,'rental.html')
 def rental_list(request):
+    
     return render(request,'rental_list.html')
 
 
@@ -117,7 +118,7 @@ def rental_list(request):
 
 
 
-def camera(request):
+def search_by_category(request):
     return render(request,'search_by_category.html')
 
 
@@ -127,7 +128,5 @@ def edit_item(request):
     return render(request,'edit_item.html')
 
 
-
-
-def list_an_item(request):
-    return render(request,'list_an_item.html')
+#def list_an_item(request):
+ #   return render(request,'list_an_item.html')
