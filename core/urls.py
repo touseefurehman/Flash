@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
 from django.urls import path, include
 from core import views as core_views
 from items import urls
@@ -32,4 +35,4 @@ urlpatterns = [
     path('search_by_category/',core_views.search_by_category, name="search_by_category"),
     
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

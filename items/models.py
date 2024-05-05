@@ -11,6 +11,6 @@ class RentalItem(models.Model):
     quantity = models.PositiveIntegerField(null=True, blank=True)
     location = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(max_length=200, null=True, blank=True)
-
+    image = models.ImageField(upload_to='rental_item_images/', blank=True, null=True)
     def __str__(self):
         return self.title

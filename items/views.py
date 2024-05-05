@@ -14,7 +14,9 @@ def rental_item_form(request):
         quantity = request.POST.get('quantity')
         location = request.POST.get('location')
         description = request.POST.get('profileDescription')
-
+        image = request.FILES.get('image')
+        
+        
         rental_item = RentalItem.objects.create(
             title=title,
             daily_price=daily,
@@ -26,6 +28,7 @@ def rental_item_form(request):
             quantity=quantity,
             location=location,
             description=description,
+            image=image,
         )
         
         return redirect('profile')
