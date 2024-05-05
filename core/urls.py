@@ -2,13 +2,20 @@ from django.contrib import admin
 from django.urls import path, include
 from core import views as core_views
 from items import urls
+from account import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signin/', core_views.signin, name='signin'), 
+    path('acc/',include('account.urls'),name='account'),
+    path('me/',include('items.urls'),name='list_an_item'),
+
+    
+    
+    
+    
     path('forget/', core_views.forget, name='forget'),
     path('reset/', core_views.pass_reset, name='reset'),
     path('home/', core_views.home, name='home'),
-    path('signup/', core_views.signup, name='signup'),
+    
     path('rent/', core_views.rent, name='rent'),
     path('lend/', core_views.lend, name='lend'),
     path('pdp/', core_views.pdp, name='pdp'),
@@ -22,6 +29,7 @@ urlpatterns = [
     path('checkout/', core_views.checkout, name='checkout'),  
     path('my_item/', core_views.my_item, name='my_item'),  
     path('edit_item/', core_views.edit_item, name='edit_item'),  
-    path('me/',include('items.urls'),name='list_an_item'),
-    path('search_by_category/',core_views.search_by_category, name="search_by_category")
+    path('search_by_category/',core_views.search_by_category, name="search_by_category"),
+    
+
 ]

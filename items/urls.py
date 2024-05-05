@@ -5,7 +5,7 @@ from items import views
 
 urlpatterns = [
 path('list_an_item/',views.rental_item_form,name='list_an_item'),    
-path('ss/',views.test),    
+path('ss/',views.test, name="test"),
 
 ]
 

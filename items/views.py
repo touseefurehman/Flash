@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect
 from .models import RentalItem
 
 def rental_item_form(request):
-    rental_items = RentalItem.objects.all()
-
     if request.method == 'POST':
         title = request.POST.get('title')
         daily = request.POST.get('daily')
@@ -27,11 +25,11 @@ def rental_item_form(request):
             market_value=market_value,
             quantity=quantity,
             location=location,
-            description=description
+            description=description,
         )
         
-        return redirect('my_item')
-    return render(request, 'list_an_item.html',  {'rental_items': rental_items})
+        return redirect('profile')
+    return render(request, 'list_an_item.html',  )
 def test(request):
-    rental_items = RentalItem.objects.all()  # Fetch all RentalItem objects
+    rental_items = RentalItem.objects.all() 
     return render(request, "test.html", {'rental_items': rental_items})

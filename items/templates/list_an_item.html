@@ -1,50 +1,41 @@
 {% extends "base.html" %} 
 {% load static %}
- {% block content %}
- <div class="container mt-5">
+{% block content %}
+<div class="container mt-5">
     <h1>List an item</h1>
     <div class="content">
         <div class="row">
             <div class="col-lg-8">
-                <div class="formss mt-5">
-        <form action="/list_an_item/" method="POST"> 
-                        {% csrf_token %}
-                      <div class="row">
-                        
+                <form action="" method="POST"> 
+                    {% csrf_token %}             
+                    <div class="row">
                         <div class="col-lg-6 col-md-12">
-                          
-                                <div class="mb-3">
-                                    <label for="title" class="form-label title-label">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label rental-label">Rental price (HKD)</label>
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="daily" class="form-label category-label">Daily</label>
-                                            <input type="text" class="form-control" id="daily" name="daily">
-                                        </div>
-                                        <div class="col">
-                                            <label for="weekly" class="form-label category-label">Weekly</label>
-                                            <input type="text" class="form-control" id="weekly" name="weekly">
-                                        </div>
-                                        <div class="col">
-                                            <label for="monthly" class="form-label category-label">Monthly</label>
-                                            <input type="text" class="form-control" id="monthly" name="monthly">
-                                        </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label title-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label rental-label">Rental price (HKD)</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="daily" class="form-label category-label">Daily</label>
+                                        <input type="text" class="form-control" id="daily" name="daily">
+                                    </div>
+                                    <div class="col">
+                                        <label for="weekly" class="form-label category-label">Weekly</label>
+                                        <input type="text" class="form-control" id="weekly" name="weekly">
+                                    </div>
+                                    <div class="col">
+                                        <label for="monthly" class="form-label category-label">Monthly</label>
+                                        <input type="text" class="form-control" id="monthly" name="monthly">
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="rentalPeriod" class="form-label period-label">Minimum rental period (Days)</label>
-                                    <input type="text" class="form-control" id="rentalPeriod" name="rentalPeriod">
-                                </div>                 
-                              
-                            
-                                                       
+                            </div>
+                            <div class="mb-3">
+                                <label for="rentalPeriod" class="form-label period-label">Minimum rental period (Days)</label>
+                                <input type="text" class="form-control" id="rentalPeriod" name="rentalPeriod">
+                            </div>                 
                         </div>
-
-
-                   
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
                                 <label for="category" class="form-label category-label">Category</label>
@@ -52,13 +43,13 @@
                             </div>
                             <div class="mb-3">
                                 <div class="row">
-                                    <div class="col"> <label for="marketValue" class="form-label value-label">Market
-                                            value (HKD)</label>
+                                    <div class="col">
+                                        <label for="marketValue" class="form-label value-label">Market value (HKD)</label>
                                         <input type="text" class="form-control" id="marketValue">
                                     </div>
-                                    <div class="col"><label for="marketValue"
-                                            class="form-label value-label">Quantity</label>
-                                        <input type="text" class="form-control" id="marketValue" pattern="[0-9]*">
+                                    <div class="col">
+                                        <label for="quantity" class="form-label value-label">Quantity</label>
+                                        <input type="text" class="form-control" id="quantity" pattern="[0-9]*">
                                     </div>
                                 </div>
                             </div>
@@ -67,42 +58,27 @@
                                 <input type="text" class="form-control" id="location">
                             </div>
                         </div>
-
                     </div>
-                    <input type="file" id="fileInput" accept="image/*">
-                    <img id="previewImage" src="#" alt="Preview">
                     <div class="describation">
                         <div class="mb-3">
-                              <label for="profileDescription" class="form-label description-label">Description</label>
+                            <label for="profileDescription" class="form-label description-label">Description</label>
                             <textarea class="form-control" id="profileDescription" rows="7" maxlength="200"></textarea>
-                            <div id="wordCount" class="form-text">0/200 words</div>                        </div>
+                            <div id="wordCount" class="form-text">0/200 words</div>                        
+                        </div>
                     </div>
-                </div>
-            </div>  <button type="submit" style="max-width: 200px;" class="btn addbutton btn-primary">Submit</button>
-        </form>
+                    <button type="submit" class="btn addbutton btn-primary">Submit</button>
+                </form>
+
+
+
+
+
+
+                
+            </div>
             <div class="col-lg-4">
-                <input type="file" id="fileInput" accept="image/*">
-                <img id="previewImage" src="#" alt="Preview">
-                <h1>sdasdsdas</h1>
             </div>
         </div>
     </div>
- 
-</div> {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+{% endblock %}
