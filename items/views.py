@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from .models import RentalItem
 from django.shortcuts import render, get_object_or_404
+import random
 
 
 def rental_item_form(request):
@@ -33,14 +34,16 @@ def rental_item_form(request):
             image=image,
         )
         
-        return redirect('profile')
+        return redirect('search_by_category')
     return render(request, 'list_an_item.html',  )
 def test(request):
     rental_items = RentalItem.objects.all() 
     return render(request, "search_by_category.html", {'rental_items': rental_items})
 
 
-def pdp(request):
-    rental_items = RentalItem.objects.all() 
+def pdp(request, rental_item_id):
+    rental_items = get_object_or_404(RentalItem, pk=rental_item_id)
+
+    return render(request, 'pdp.html', {'rental_item': rental_items})
+
     
-    return render(request,'pdp.html', {'rental_items': rental_items})

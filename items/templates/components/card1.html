@@ -22,7 +22,7 @@
     <div class="col-lg-3 col-md-6 col-sm-12 mt-5"> 
 
   <div class="card border-0">
-      <a style="text-decoration: none;color: none;" href="{% url 'pdp' %}" class="card-link" >
+      <a style="text-decoration: none;color: none;" href="{% url 'pdp' rental_item.id %}" class="card-link" >
         {% if rental_item.image %}
         <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" max-width: 300px;height: 160px;"
       class="card-img-top img-cards1" alt="...">

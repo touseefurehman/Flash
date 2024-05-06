@@ -282,6 +282,7 @@
     line-height: 26px;
     text-align: left;
     color: rgba(204, 204, 204, 1);
+    max-width: 600px;
 }
 
 
@@ -318,6 +319,7 @@ border: none;}
     color: rgba(38, 50, 56, 1);
     font-size: xx-large;
     font-weight: 600;
+    max-width: 480px;
 }
 
 .pdp-address {
