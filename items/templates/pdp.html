@@ -1,6 +1,11 @@
-{% extends "base.html" %} {% load static %} {% block content %} <div class="container">
+{% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+ <div class="container">
     <div class="links mt-4" style="display: flex;">
-        <div>
+        <div>  
+
             <a class="pdp-a" href="#" style="text-decoration: none; 
         font-family: Poppins;
         font-size: 16px;
@@ -36,7 +41,7 @@
     <div class="deatails">
         <div class="row">
             <div class="col-lg-7 col-sm-12">
-                <img src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid">
+                <img src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" style="max-width: 700px;" alt class="img-fluid">
                 <div>
                     <div class="row mt-3">
                         <div class="col"><img style="border-radius: 12px;"
@@ -141,26 +146,15 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54439.22404009505!2d74.25565838813783!3d31.484271231452443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903ee86619e19%3A0x1df20c73e9c6c4f3!2sJinnah%20Hospital!5e0!3m2!1sen!2s!4v1713532783609!5m2!1sen!2s"
                 height="450" style="border:0;width: 100%;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         </div>
+        {% endfor %}
+
     </div>
-    <div class="row">
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
-        </div>
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
-        </div>
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
-        </div>
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
-        </div>
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
-        </div>
-        <div class="col-lg-3"> 
-            {% include 'components/card.html' %}
+        <div class="row">
+            {% include 'components/card1.html' %}
+     
+    </div>
         </div>
     </div>
 </div> 

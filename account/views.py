@@ -9,8 +9,8 @@ def signup(request):
     if request.method == "POST":
         fm = SignUpForm(request.POST)
         if fm.is_valid():
-            messages.success(request,'Email has been send to your email address please Activate that')
             fm.save()
+            return redirect('signin')
     else:
         fm = SignUpForm()
     return render(request, 'signup.html', {'form': fm})
@@ -29,7 +29,7 @@ def signin(request):
                 return redirect('search_by_category') 
     else:
         form = AuthenticationForm()
-    return render(request, 'signin.html', {'form': form})
+    return render(request, 'signin.html', {'form': form, 'invalid_credentials': True})
 
 
 

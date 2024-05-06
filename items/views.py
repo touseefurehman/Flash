@@ -1,6 +1,8 @@
 # views.py
 from django.shortcuts import render, redirect
 from .models import RentalItem
+from django.shortcuts import render, get_object_or_404
+
 
 def rental_item_form(request):
     if request.method == 'POST':
@@ -35,4 +37,10 @@ def rental_item_form(request):
     return render(request, 'list_an_item.html',  )
 def test(request):
     rental_items = RentalItem.objects.all() 
-    return render(request, "test.html", {'rental_items': rental_items})
+    return render(request, "search_by_category.html", {'rental_items': rental_items})
+
+
+def pdp(request):
+    rental_items = RentalItem.objects.all() 
+    
+    return render(request,'pdp.html', {'rental_items': rental_items})

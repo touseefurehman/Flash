@@ -5,7 +5,7 @@ from . import views
 from items import urls
 urlpatterns = [
 
-    path('signin/', views.signin, name='signin'), 
+    path('', views.signin, name='signin'), 
 
-path('signup/',views.signup, name='signup'),
+    path('signup/',views.signup, name='signup'),
 ]

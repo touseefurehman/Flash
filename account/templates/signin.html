@@ -33,7 +33,11 @@
                                     {{fm.label_tag}} {{fm}} {{fm.errors |striptags}} <br><br>
 
                                     {% endfor %}
-
+                                    {% if invalid_credentials %}
+                                    <div class="alert alert-danger" role="alert">
+                                        User does not exist or invalid credentials. Please try again.
+                                    </div>
+                                    {% endif %}
     
                                 <div style="float: right;">
                                     <a style="text-decoration: none;" href="{% url 'forget' %}">

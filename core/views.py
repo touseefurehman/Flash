@@ -60,8 +60,6 @@ def lend (request):
 
 
 
-def pdp(request):
-    return render(request,'pdp.html')
 
 def profile(request):
     return render(request,'profile.html')
@@ -92,8 +90,6 @@ def rental_list(request):
 
 
 
-def search_by_category(request):
-    return render(request,'search_by_category.html')
 
 
 
