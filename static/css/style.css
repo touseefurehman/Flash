@@ -372,6 +372,7 @@ border: none;}
 
 .pdp-price-value {
     margin-top: 5px;
+    word-break: break-all;
 }
 
 .pdp-price-value span {
@@ -1263,6 +1264,7 @@ width: 300px;
 }
 .profile-input {
     border-radius: 10px;
+    padding-left: 10px;
 }
 .new_item h1{
     font-family: Poppins;

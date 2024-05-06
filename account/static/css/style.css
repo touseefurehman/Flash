@@ -182,7 +182,9 @@
     max-width: 400px;
 }
 
-
+.addbutton{
+    max-width: 200px;
+}
 
 
 .rental-reviews {

@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% load static %} {% block content %} <div class="container mt-5">
+{% extends "base.html" %} 
+{% load static %}
+ {% block content %}
+ <div class="container mt-5">
     <h1>List an item</h1>
-    <div class="content">
+
+    <form action="" method="POST"  enctype="multipart/form-data"> {% csrf_token %} <div class="row">
+        <div class="content">
         <div class="row">
-            <form action="" method="POST"  enctype="multipart/form-data"> {% csrf_token %} <div class="row">
             <div class="col-lg-8">
                     <div class="row">
                         <div class="col-lg-6">
@@ -74,12 +78,26 @@
             </div>
                 
             <div class="col-lg-4">
-                <input type="file" name="image" accept="image/*" required>
-                <button type="submit" class="btn addbutton btn-primary">Submit</button>
+                <div>
+                    <label class="text-center" style="color:rgba(196, 196, 196, 1); border: 3px dotted rgba(196, 196, 196, 1);border-radius: 12px; padding: 100px;" for="upload_img"> Upload Image </label>
+                
+                    <input type="file" id="upload_img" hidden name="image" accept="image/*" required>
+
+
+
+
+                </div>
             </div>
-        </form>
         </div>
-    </div>
+    
+    <button type="submit" style="float: right;background: #005494;
+
+    " class="btn mb-5 addbutton btn-primary">List new item</button>
+</form>
+
+
+
+</div></div>
 </div>
-</div>
-</div> {% endblock %}
+
+ {% endblock %}

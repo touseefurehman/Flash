@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from .models import Profile
 
 def signup(request):
     if request.method == "POST":
@@ -26,15 +25,11 @@ def signin(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('profile')  # Redirect to profile page upon successful login
+                return redirect('profile') 
     
             
     else:
         form = AuthenticationForm()
     return render(request, 'signin.html', {'form': form,})
 
-@login_required
-def profile(request):
-    # Retrieve the profile associated with the current user
-    profile = Profile.objects.get(user=request.user)
-    return render(request, 'profile.html', {'profile': profile})
+

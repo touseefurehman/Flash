@@ -49,21 +49,10 @@
               class="card-img-top img-cards1" alt="...">
             {% endif %}
                 <div>
-                    <div class="row mt-3">
-                        <div class="col"><img style="border-radius: 12px;"
-                                src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid"></div>
-                        <div class="col"><img style="border-radius: 12px;"
-                                src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid"></div>
-                        <div class="col"><img style="border-radius: 12px;"
-                                src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid"></div>
-                        <div class="col"><img style="border-radius: 12px;"
-                                src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid"></div>
-                        <div class="col"><img style="border-radius: 12px;"
-                                src="{% static 'image/nav/unsplash_178j8tJrNlc (1).png' %}" alt class="img-fluid"></div>
-                    </div>
+
                 </div>
             </div>
-            <div class="col-lg-5 col-sm-12">
+            <div class="col-lg-5 mt-4 col-sm-12">
                 <div class="pdp-container">
                     <div class="pdp-inner">
                         <h1 class="pdp-title">{{ rental_item.title }}</h1>
@@ -98,8 +87,48 @@
                                 <p class="pdp-price-value"><span>${{ rental_item.monthly_price }}</span>/Monthly</p>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary mt-2 pdp-check-btn">Check price and availability</button>
+    
+                        <button id="checkBtn" type="button" class="btn btn-primary mt-2 pdp-check-btn">Check price and availability</button>
+
+                        <div id="calendarPopup" class="modal fade">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Complete Calendar</h5>
+                               
+
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              <div class="modal-body">
+                                <!-- Calendar content will be loaded here -->
+                                <div id="calendar"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         
+
+
+
+
+
+
+
+
+
+
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#checkBtn").click(function(){
+    $("#calendarPopup").modal("show");
+    // Initialize or load your calendar here
+    // You can use a library like FullCalendar for this purpose
+  });
+});
+</script>
+
                     </div>
                 </div>
             </div>
@@ -141,34 +170,8 @@
 
     </div>
     <div class="row">
-         {% for rental_item in rental_items %}
-  {% comment %} <div class="col-lg-3">  {% endcomment %}
-    <div class="col-lg-3 col-md-6 col-sm-12 mt-5"> 
+        {% include 'components/card1.html' %}
 
-  <div class="card border-0">
-      <a style="text-decoration: none;color: none;" href="{% url 'pdp' rental_item.id %}" class="card-link" >
-        {% if rental_item.image %}
-        <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" max-width: 300px;height: 160px;"
-      class="card-img-top img-cards1" alt="...">
-    {% endif %}
-    
-          <div class="card-body">
-              <h5 class="card-title">{{ rental_item.title }}</h5>
-              <div class="card-address">
-                  <p class="card-text">{{ rental_item.location}}</p>
-              </div>
-              <div class="card-details mt-4">
-                  <h5 class="card-price">${{ rental_item.daily_price }}</h5>
-                  <div class="card-rating"> <img src="{% static 'image/nav/star_rate.png' %}"class="img" alt="...">4.8 </div>
-              </div>
-          </div>
-      </a>        </div>
-
-  </div>  
-{% comment %} </div> {% endcomment %}
-
-  {% endfor %}
- 
 </div>     
     </div>
         </div>
