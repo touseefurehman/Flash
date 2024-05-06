@@ -1,9 +1,10 @@
-from django.shortcuts import render,HttpResponse,redirect,HttpResponseRedirect
-
+# views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
-from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
+from .models import Profile
 
 def signup(request):
     if request.method == "POST":
@@ -15,8 +16,6 @@ def signup(request):
         fm = SignUpForm()
     return render(request, 'signup.html', {'form': fm})
 
-
-
 def signin(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -24,12 +23,18 @@ def signin(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
+
             if user is not None:
                 login(request, user)
-                return redirect('search_by_category') 
+                return redirect('profile')  # Redirect to profile page upon successful login
+    
+            
     else:
         form = AuthenticationForm()
-    return render(request, 'signin.html', {'form': form, 'invalid_credentials': True})
+    return render(request, 'signin.html', {'form': form,})
 
-
-
+@login_required
+def profile(request):
+    # Retrieve the profile associated with the current user
+    profile = Profile.objects.get(user=request.user)
+    return render(request, 'profile.html', {'profile': profile})

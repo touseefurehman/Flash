@@ -1,6 +1,7 @@
 # views.py
 from django.shortcuts import render, redirect
 from .models import RentalItem
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 import random
 
@@ -19,6 +20,8 @@ def rental_item_form(request):
         description = request.POST.get('profileDescription')
         image = request.FILES.get('image')
         
+        user = request.user
+
         
         rental_item = RentalItem.objects.create(
             title=title,
