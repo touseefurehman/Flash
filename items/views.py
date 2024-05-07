@@ -39,6 +39,11 @@ def rental_item_form(request):
         
         return redirect('search_by_category')
     return render(request, 'list_an_item.html',  )
+
+
+
+
+
 def test(request):
     rental_items = RentalItem.objects.all() 
     return render(request, "search_by_category.html", {'rental_items': rental_items})

@@ -17,5 +17,6 @@ class RentalItem(models.Model):
     location = models.CharField(max_length=255)
     description = models.TextField(max_length=200)
     image = models.ImageField(upload_to='rental_item_images/', blank=True, null=True)
+    
     def __str__(self):
         return self.title

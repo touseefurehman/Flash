@@ -8,14 +8,15 @@
                 <div class="container d-flex justify-content-center align-items-center ">
                     <div class="text-center">
                         <div class="profile-image mt-5">
+                            
                             <img class="img1 profile-preview-image" id="preview_image"
-                                src="{% static 'image/nav/Group 1961.png' %}" alt="Profile Picture">
+                                src="{% static 'image/nav/Group 1961.png' %}" alt="{% static 'image/nav/Group 1961.png' %}">
                         </div>
                         <input type="file" id="upload-input" accept="image/*" style="display: none;">
                     </div>
                 </div>
-                <h1 class="profile-name">John Doe</h1>
-                <h2 class="profile-email">johndoe@gmail.com</h2>
+                <h1 class="profile-name">{{ user_profile.name }}</h1>
+                <h2 class="profile-email">{{ user_profile.email }}</h2>
             </div>
             <div>
                 <h1 class="mt-5 profile-statistics">Your statistics</h1>
@@ -88,32 +89,32 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="mb-3">
                             <label for="firstName" class="form-label profile-label">First Name</label>
-                            <input type="text" class="form-1 profile-input" id="firstName">
+                            <input value="{{ user_profile.name }}" type="text" class="form-1 profile-input" id="firstName">
                         </div>
                         <div class="mb-3">
                             <label for="emailAddress" class="form-label profile-label">Email Address</label>
-                            <input type="text" class="form-1 profile-input" id="emailAddress">
+                            <input value="{{ user_profile.email }}" type="text" class="form-1 profile-input" id="emailAddress">
                         </div>
                         <div class="mb-3">
                             <label for="location" class="form-label profile-label">Location</label>
-                            <input type="text" class="form-1 profile-input" id="location">
+                            <input type="text" value="{{ user_profile.location }}" class="form-1 profile-input" id="location">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="mb-3">
                             <label for="lastName" class="form-label profile-label">Last Name</label>
-                            <input type="text" class="form-1 profile-input" id="lastName">
+                            <input type="text" class="form-1 profile-input" value="{{ user_profile.last_name }}" id="lastName">
                         </div>
                         <div class="mb-3">
                             <label for="phoneNumber" class="form-label profile-label">Phone Number</label>
-                            <input type="text" class="form-1 profile-input" id="phoneNumber">
+                            <input type="text" class="form-1 profile-input" value="{{ user_profile.number }}" id="phoneNumber">
                         </div>
                     </div>
                 </div>
                 <div class="describation">
                     <div class="mb-3">
                         <label for="profileDescription" class="form-label profile-label">Profile Description</label>
-                        <textarea class="form-control profile-textarea" id="profileDescription" rows="7"
+                        <textarea class="form-control profile-textarea" id="profileDescription" rows="7" placeholder="{{ user_profile.about }}"
                             maxlength="200"></textarea>
                         <div id="wordCount" class="form-text">0/200 words</div>
                     </div>

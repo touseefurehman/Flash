@@ -11,7 +11,7 @@ def signup(request):
         fm = SignUpForm(request.POST)
         if fm.is_valid():
             fm.save()
-            return redirect('signin')
+            return redirect('setupprofile')
     else:
         fm = SignUpForm()
     return render(request, 'signup.html', {'form': fm})
@@ -19,7 +19,7 @@ def signup(request):
 def signin(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():  # Perform validation
+        if form.is_valid():  
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
@@ -34,7 +34,7 @@ def signin(request):
     return render(request, 'signin.html', {'form': form,})
 
 
-def bio(request):
+def bio2(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         last_name = request.POST.get('last_name')
@@ -42,18 +42,35 @@ def bio(request):
         location = request.POST.get('location')
         about = request.POST.get('about')
         number = request.POST.get('number')
+        image = request.FILES.get('image')
+        
         user = request.user
 
-        bio = bio.objects.create(
+        user, created = bio.objects.update_or_create(
             user=user,
-            name=name,
-            last_name=last_name,
-            email=email,
-            location=location,
-            about=about,
-            number=number,
-            image=image
+            defaults={
+                'name': name,
+                'last_name': last_name,
+                'email': email,
+                'location': location,
+                'about': about,
+                'number': number,
+                'image': image, 
+                
+            }
         )
         
         return redirect('search_by_category')
     return render(request, 'setup_proofile.html',  )
+
+
+
+def profile(request):
+    user_profile = bio.objects.filter(user=request.user).first()
+    return render(request, "profile.html", {'user_profile': user_profile})
+
+def user_logout(request):
+    print("User")
+    print(request.user)
+    logout(request)
+    return redirect('signin')
