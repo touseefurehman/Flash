@@ -25,7 +25,7 @@ def signin(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('profile') 
+                return redirect('search_by_category') 
     
             
     else:

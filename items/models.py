@@ -1,6 +1,11 @@
 from django.db import models
 
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 class RentalItem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     daily_price = models.DecimalField(max_digits=10, decimal_places=2)
     weekly_price = models.DecimalField(max_digits=10, decimal_places=2)

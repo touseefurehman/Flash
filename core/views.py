@@ -1,6 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect,HttpResponseRedirect
 
-from .forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
@@ -28,24 +27,6 @@ def pass_reset(request):
 def home(request):
     return render(request,'home.html')
 
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-         
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            
-           
-            user = User(first_name=first_name, last_name=last_name, email=email)
-            user.save()
-            
-          
-            return redirect('rent')  
-    else:
-        form = SignUpForm()
-    return render(request, 'signup.html', {'form': form})
 
 def rent(request):
     return render(request,'rent.html')
@@ -92,10 +73,6 @@ def rental_list(request):
 
 
 
-
-
-def edit_item(request):
-    return render(request,'edit_item.html')
 
 
 #def list_an_item(request):

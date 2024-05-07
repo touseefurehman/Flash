@@ -24,6 +24,5 @@ urlpatterns = [
     path('rental_list/', core_views.rental_list, name='rental_list'), 
     path('checkout/', core_views.checkout, name='checkout'),  
     path('my_item/', core_views.my_item, name='my_item'),  
-    path('edit_item/', core_views.edit_item, name='edit_item'),      
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

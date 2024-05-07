@@ -1,34 +1,20 @@
-{% extends "base.html" %} {% load static %} {% block content %} 
-
-
-
-
-
-
+{% extends "base.html" %} 
+{% load static %}
+ {% block content %} 
 <div class="container mt-5">
     <div class="new_item mt-5">
         <div>
             <div>
-                <div style="display: flex;">                <h1>My Rentals</h1>
-    
-            <h1 style="margin-left: 10px; color: black;"> items</h1>
+                <div style="display: flex;">
+                    <h1>{{id}} My Rentals</h1>
+                    <h1 style="margin-left: 10px; color: black;"> items</h1>
+             </div>
         </div>
-
-        
-        </div>
-        <div> <a  style="margin-left: auto;" href="{% url 'listlend' %}">
+        <div> <a  style="margin-left: auto;" href="#">
             <button type="button" st class="btn smbut btn-primary">Save</button>
         </a></div>
         <div>
-
-
-
-
-
-
 <hr>
-
-
         <div class="row">
             <div class="col-lg-8">
                     <div class="row mt-5">
@@ -61,8 +47,8 @@
                                 <input type="text" class="form-control" id="category">
                             </div>
                             <div class="mb-3">
-                                <div class="row">
-                                    <div class="col"> <label for="marketValue" class="form-label value-label">Market
+                                <div class="row mt-5">
+                                    <div class="col "> <label for="marketValue" class="form-label value-label">Market
                                             value (HKD)</label>
                                         <input type="text" class="form-control" id="marketValue">
                                     </div>
@@ -85,10 +71,20 @@
                             <div id="wordCount" class="form-text">0/200 words</div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>        
             <div class="col-lg-4">
+                <div>
+                    <label class="text-center" style="color:rgba(196, 196, 196, 1); border: 3px dotted rgba(196, 196, 196, 1);border-radius: 12px; padding: 100px;" for="upload_img"> Upload Image </label>
+                
+                    <input type="file" id="upload_img" hidden name="image" accept="image/*" required>
+
+
+
+
+                </div>
+          
             </div>
         </div>
-    </div>
+    </div></div>
+</div></div>
 </div> {% endblock %}

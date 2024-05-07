@@ -45,8 +45,21 @@ def test(request):
 
 
 def pdp(request, rental_item_id):
+    rental_items = RentalItem.objects.all() 
     rental_items = get_object_or_404(RentalItem, pk=rental_item_id)
-
     return render(request, 'pdp.html', {'rental_item': rental_items})
 
     
+
+
+def edit_item(request):
+    
+    
+    
+    return render(request,'edit_item.html')
+
+
+
+def search_by_list(request):
+    rental_items = RentalItem.objects.all() 
+    return render(request, "search_by_list.html", {'rental_items': rental_items})
