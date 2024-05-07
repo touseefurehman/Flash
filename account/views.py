@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from .models import bio
 
 def signup(request):
     if request.method == "POST":
@@ -33,3 +34,26 @@ def signin(request):
     return render(request, 'signin.html', {'form': form,})
 
 
+def bio(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        location = request.POST.get('location')
+        about = request.POST.get('about')
+        number = request.POST.get('number')
+        user = request.user
+
+        bio = bio.objects.create(
+            user=user,
+            name=name,
+            last_name=last_name,
+            email=email,
+            location=location,
+            about=about,
+            number=number,
+            image=image
+        )
+        
+        return redirect('search_by_category')
+    return render(request, 'setup_proofile.html',  )
