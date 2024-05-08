@@ -11,6 +11,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls'), name='account'),
     path('items/',include('items.urls'),name='list_an_item'),
-    path('o/', include('o.urls'), name='o'),
+    path('', include('o.urls'), name='o'),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -13,7 +13,7 @@ def signup(request):
         fm = SignUpForm(request.POST)
         if fm.is_valid():
             fm.save()
-            return redirect('setupprofile')
+            return redirect('login')
     else:
         fm = SignUpForm()
     return render(request, 'signup.html', {'form': fm})
@@ -74,8 +74,15 @@ def profile(request):
     user_profile = bio.objects.filter(user=request.user).first()
     return render(request, "profile.html", {'user_profile': user_profile})
 
+
+
+
 def user_logout(request):
     print("User")
     print(request.user)
     logout(request)
     return redirect('login')
+
+
+
+

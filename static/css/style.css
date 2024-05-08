@@ -720,8 +720,8 @@ label {
 
 .signpage {
     margin-top: 80px;
-    max-width: 100%;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     border-radius: 32px;
     position: absolute;
     top: 50%;
@@ -1213,6 +1213,7 @@ border-radius: 12px;
     width: 100px;
     border-radius: 50%;
     height: 100px;
+    object-fit: cover;
 }
 
 .profile-column {
@@ -1231,11 +1232,13 @@ border-radius: 12px;
     color: white;
 }
 
+
 .profile-button {
     width: 198px;
     height: 60px;
     border-radius: 16px;
     background: rgba(0, 84, 148, 1);
+    border: none;
 }
 
 .profile-button-text {
@@ -1322,6 +1325,9 @@ width: 300px;
    
         top: 0;
     
+    }
+    .signpage{
+        margin-top: 233px;
     }
     .camera_page_s1 h1 {
    font-size: 25px;

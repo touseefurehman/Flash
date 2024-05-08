@@ -12,9 +12,7 @@ User = get_user_model()
 
 
 
-def my_item(request):
-    user_profile = bio.objects.filter(user=request.user).first()
-    return render(request,'my_item.html')
+
 
 
 

@@ -17,24 +17,25 @@
 
 
 
-  {% for rental_item in rental_items %}
+  {% for page_obj in page_obj %}
   {% comment %} <div class="col-lg-3">  {% endcomment %}
-    <div class="col-lg-3 col-md-6 col-sm-12 mt-5"> 
+    <div class="col-lg-3 col-md-6 col-sm-6 mt-5"> 
 
   <div class="card border-0">
-      <a style="text-decoration: none;color: none;" href="{% url 'pdp' rental_item.id %}" class="card-link" >
-        {% if rental_item.image %}
-        <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" max-width: 300px;height: 160px;"
+      <a style="text-decoration: none;color: none;" href="{% url 'pdp' page_obj.id %}" class="card-link" >
+        {% if page_obj.image %}
+        <img src="{{ MEDIA_URL }}{{ page_obj.image.url }}" style=" max-width: 300px;object-fit: 
+        cover; height: 160px;"
       class="card-img-top img-cards1" alt="...">
     {% endif %}
     
           <div class="card-body">
-              <h5 class="card-title">{{ rental_item.title }}</h5>
+              <h5 class="card-title">{{ page_obj.title }}</h5>
               <div class="card-address">
-                  <p class="card-text">{{ rental_item.location}}</p>
+                  <p class="card-text">{{ page_obj.location}}</p>
               </div>
               <div class="card-details mt-4">
-                  <h5 class="card-price">${{ rental_item.daily_price }}</h5>
+                  <h5 class="card-price">${{ page_obj.daily_price }}</h5>
                   <div class="card-rating"> <img src="{% static 'image/nav/star_rate.png' %}"class="img" alt="...">4.8 </div>
               </div>
           </div>

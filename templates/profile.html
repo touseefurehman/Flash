@@ -20,19 +20,20 @@
             </div>
             <div>
                 <h1 class="mt-5 profile-statistics">Your statistics</h1>
+                <a href="{% url 'withdraw' %}" style="text-decoration: none; color: rgb(0, 0, 0);">
                 <div class="profile-box">
                     <h2 class="profile-statistics-value">$0.00</h2>
                     <div class="profile-row">
-                        <a href="{% url 'withdraw' %}" style="text-decoration: none;">
+                     
                             <div>
                                 <h1 class="profile-statistics-info">Lifetime earnings</h1>
                             </div>
                             <div>
                                 <img class="profile-coin" src="{% static 'image/nav/coin.png' %}" alt>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                        
+                    </div></a>
+                </div></a>
                 <div class="row mt-2">
                     <div class="col-6">
                         <div class="profile-column">
@@ -69,14 +70,14 @@
                 <div class="inbox d-flex justify-content-between ">
                     <div>
                         <a class="profile-link" href="{% url 'list_an_item' %}">
-                            <button class="btn inbox-button profile-button">
+                            <button class="  earn-button profile-button">
                                 <h1 class="profile-button-text">List and earn</h1>
                             </button>
                         </a>
                     </div>
                     <div>
                         <a class="profile-link" href="{% url 'edit_profile' %}">
-                            <button class="btn inbox-button profile-button">
+                            <button class=" inbox-button profile-button">
                                 <h1 class="profile-button-text">Edit Profile</h1>
                             </button>
                         </a>

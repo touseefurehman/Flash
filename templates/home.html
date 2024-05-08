@@ -36,13 +36,16 @@
                 <ul class="navbar-nav ms-auto gap-3" style="align-items: center;">
                     <li class="nav-item">
                         <a class="nav-link" href=" {% url 'signup' %}">
-                            <h5 style="background-color: white
-                    ;color: #005494; border-radius: 12px;padding: 12px;">Sign up</h5>
+                            <button class="btn inbox-button profile-button">
+                                <h1 class="profile-button-text">Sign up</h1>
+                            </button>
+                            
                         </a>
                     </li>
-                    <li><a class="nav-link" href=" {% url 'signin' %}">
-                            <h5 style="background-color: #005494
-                    ;color: white; border-radius: 12px;padding: 12px;">Sign In</h5>
+                    <li><a class="nav-link" href=" {% url 'login' %}">
+                        <button class="btn inbox-button profile-button">
+                            <h1 class="profile-button-text">SIGNIN</h1>
+                        </button>
                         </a>
                     </li>
                 </ul>

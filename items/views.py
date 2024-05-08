@@ -5,6 +5,8 @@ from django.shortcuts import render, get_object_or_404
 import random
 from django.contrib.auth.decorators import login_required
 from account.models import bio
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 @login_required
 def rental_item_form(request):
@@ -45,6 +47,21 @@ def rental_item_form(request):
     return render(request, 'list_an_item.html')
 
 
+def test(request):
+    search_query = request.GET.get('q') 
+    if search_query:
+        rental_items = RentalItem.objects.filter(title__icontains=search_query).order_by('id')
+    else:
+        rental_items = RentalItem.objects.all().order_by('id')
+    
+    paginator = Paginator(rental_items, 4)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, "search_by_category.html", {'page_obj': page_obj})
+
+
+
+
 def login_redirect(request):
     if not request.user.is_authenticated:
         return redirect('login')
@@ -52,22 +69,30 @@ def login_redirect(request):
         return redirect('rental_item_form')
 
 
-def test(request):
-    rental_items = RentalItem.objects.all() 
-    user_profile = bio.objects.filter(user=request.user).first()
 
-    return render(request, "search_by_category.html", {'rental_items': rental_items})
+
+
+
+
+
+
+
+
+
+
 
 
 def pdp(request, rental_item_id):
     rental_items = RentalItem.objects.all() 
     rental_items = get_object_or_404(RentalItem, pk=rental_item_id)
-    user_profile = bio.objects.filter(user=request.user).first()
 
     return render(request, 'pdp.html', {'rental_item': rental_items})
 
-    
-
+@login_required
+def my_item(request):
+    rental_items = RentalItem.objects.all()
+    user = request.user 
+    return render(request, 'my_item.html', {'rental_items': rental_items, 'user': user})
 
 def edit_item(request):
     

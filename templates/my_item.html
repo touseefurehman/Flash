@@ -8,7 +8,7 @@
                 type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My item</button>
         </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <div style="height: 100vh;" class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
             tabindex="0">
             <div class="card123">
@@ -77,10 +77,16 @@
                                     <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top"
                                         alt="...">
                                 </div>
+                                
+                                {% for rental_it in rental_item  %}
+                                    
+                            <p> {{ rental_item.title }}</p>
+                                {% endfor %}
+                                    
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <p class="card-text custom-card-text">John Doe</p>
-                                        <h5 class="card-title custom-card-title">SONY PXW-X200 Full Camera</h5>
+                                        <p class="card-text custom-card-text"></p>
+                                        <h5 class="card-title custom-card-title">{{ rental_item.title }}</h5>
                                         <div class="card-description">
                                             <p class="card-text custom-card-description">Lorem ipsum dolor sit amet,
                                                 consectetur adipiscing elit, sed do eiusmod tempor consectetur
@@ -96,7 +102,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="card-address">
-                            <p style="text-align: right;margin-left: auto;" class="card-text">Ohio St. 16 H. 435 South Gate, California
+                            <p style="text-align: right;margin-left: auto;" class="card-text">{{ rental_item.location }}
                             </p>
                         </div>
                         <div class="card-details mt-4">
