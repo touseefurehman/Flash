@@ -54,7 +54,7 @@ def test(request):
     else:
         rental_items = RentalItem.objects.all().order_by('id')
     
-    paginator = Paginator(rental_items, 4)
+    paginator = Paginator(rental_items, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, "search_by_category.html", {'page_obj': page_obj})
@@ -67,25 +67,10 @@ def login_redirect(request):
         return redirect('login')
     else:
         return redirect('rental_item_form')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 def pdp(request, rental_item_id):
     rental_items = RentalItem.objects.all() 
     rental_items = get_object_or_404(RentalItem, pk=rental_item_id)
-
     return render(request, 'pdp.html', {'rental_item': rental_items})
 
 @login_required
