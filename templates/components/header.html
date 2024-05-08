@@ -46,7 +46,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}">
-                        <img src="{% static 'image/nav/Group 1959.png' %}" style="width: 183px; height: 54px;" alt>
+                      
+                        <img class="img1 profile-preview-image" style="height: 54px; width: 54px;" id="preview_image" src="{{ user_profile.image.url }}" alt="Profile Image">
                     </a>
                 </li>
                 <li>

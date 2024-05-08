@@ -9,8 +9,8 @@
                     <div class="text-center">
                         <div class="profile-image mt-5">
                             
-                            <img class="img1 profile-preview-image" id="preview_image"
-                                src="{% static 'image/nav/Group 1961.png' %}" alt="{% static 'image/nav/Group 1961.png' %}">
+                            <img class="img1 profile-preview-image" id="preview_image" src="{{ user_profile.image.url }}" alt="Profile Image">
+
                         </div>
                         <input type="file" id="upload-input" accept="image/*" style="display: none;">
                     </div>
@@ -89,32 +89,32 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="mb-3">
                             <label for="firstName" class="form-label profile-label">First Name</label>
-                            <input value="{{ user_profile.name }}" type="text" class="form-1 profile-input" id="firstName">
+                            <input value="{{ user_profile.name }}" type="text" class="form-1 profile-input" readonly id="firstName">
                         </div>
                         <div class="mb-3">
                             <label for="emailAddress" class="form-label profile-label">Email Address</label>
-                            <input value="{{ user_profile.email }}" type="text" class="form-1 profile-input" id="emailAddress">
+                            <input value="{{ user_profile.email }}" type="text" class="form-1 profile-input" readonly id="emailAddress">
                         </div>
                         <div class="mb-3">
                             <label for="location" class="form-label profile-label">Location</label>
-                            <input type="text" value="{{ user_profile.location }}" class="form-1 profile-input" id="location">
+                            <input type="text" value="{{ user_profile.location }}" class="form-1 profile-input" readonly id="location">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="mb-3">
                             <label for="lastName" class="form-label profile-label">Last Name</label>
-                            <input type="text" class="form-1 profile-input" value="{{ user_profile.last_name }}" id="lastName">
+                            <input type="text" class="form-1 profile-input" value="{{ user_profile.last_name }}" readonly id="lastName">
                         </div>
                         <div class="mb-3">
                             <label for="phoneNumber" class="form-label profile-label">Phone Number</label>
-                            <input type="text" class="form-1 profile-input" value="{{ user_profile.number }}" id="phoneNumber">
+                            <input type="text" class="form-1 profile-input" value="{{ user_profile.number }}" readonly id="phoneNumber">
                         </div>
                     </div>
                 </div>
                 <div class="describation">
                     <div class="mb-3">
                         <label for="profileDescription" class="form-label profile-label">Profile Description</label>
-                        <textarea class="form-control profile-textarea" id="profileDescription" rows="7" placeholder="{{ user_profile.about }}"
+                        <textarea class="form-control profile-textarea" id="profileDescription" rows="7" readonly placeholder="{{ user_profile.about }}"
                             maxlength="200"></textarea>
                         <div id="wordCount" class="form-text">0/200 words</div>
                     </div>

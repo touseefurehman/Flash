@@ -1,5 +1,7 @@
 # views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,HttpResponseRedirect
+from django.urls import reverse
+
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -64,8 +66,11 @@ def bio2(request):
     return render(request, 'setup_proofile.html',  )
 
 
-
+@login_required
 def profile(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('login'))
+    
     user_profile = bio.objects.filter(user=request.user).first()
     return render(request, "profile.html", {'user_profile': user_profile})
 
@@ -73,4 +78,4 @@ def user_logout(request):
     print("User")
     print(request.user)
     logout(request)
-    return redirect('signin')
+    return redirect('login')

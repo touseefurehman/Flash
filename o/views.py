@@ -3,14 +3,17 @@ from django.shortcuts import render,HttpResponse,redirect,HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import get_user_model
+from account.models import bio
 
-
+User = get_user_model()
 
 
 
 
 
 def my_item(request):
+    user_profile = bio.objects.filter(user=request.user).first()
     return render(request,'my_item.html')
 
 
@@ -21,6 +24,12 @@ def checkout(request):
 
 
 def forget(request):
+    if request.method=="POST":
+        email = request.POST.get("email")
+        if not User.objects.filter(email=email).exists():
+            messages.warning(request, "User Not exist in the databasse")
+            
+        
     return render(request,'forget.html')
 def pass_reset(request):
     return render(request,'pass_reset.html')
