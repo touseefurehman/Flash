@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from . import views 
 from items import urls
-from account import urls
+from log import urls
 urlpatterns = [
     path('forget/', views.forget, name='forget'),
     path('reset/', views.pass_reset, name='reset'),

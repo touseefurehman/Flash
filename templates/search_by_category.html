@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load static %} {% block content %} <div class="container mt-4">
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+ <div class="container mt-4">
     <p>
         <a href="#" style="text-decoration: none; 
         font-family: Poppins;
@@ -72,10 +75,19 @@
                 </li> {% if page_obj.has_next %} <li class="page-item">
                     <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
                 </li>
-                <li class="page-item">
+                <li class="page-
+                ">
                     <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
                 </li> {% endif %}
             </ul>
         </div>
     </section>
 </div> {% endblock %}
+
+
+
+
+
+
+
+

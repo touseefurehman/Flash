@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 import random
 from django.contrib.auth.decorators import login_required
-from account.models import bio
+from log.models import bio
 from django.core.paginator import Paginator
 from django.db.models import Q
 
@@ -58,9 +58,6 @@ def test(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, "search_by_category.html", {'page_obj': page_obj})
-
-
-
 
 def login_redirect(request):
     if not request.user.is_authenticated:

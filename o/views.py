@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth import get_user_model
-from account.models import bio
+from log.models import bio
 
 User = get_user_model()
 
