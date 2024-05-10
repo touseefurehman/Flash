@@ -7,11 +7,14 @@ from items import urls
 from log import urls
 from o import urls
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('log.urls'), name='log'),
     path('items/',include('items.urls'),name='list_an_item'),
     path('', include('o.urls'), name='o'),
-    
+     path('accounts/', include('allauth.urls')),
+
+
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

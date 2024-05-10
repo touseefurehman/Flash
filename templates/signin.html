@@ -1,4 +1,7 @@
+
+{% load socialaccount %}
 {% load static %}
+                                    
 <!doctype html>
 <html lang="en">
 
@@ -58,6 +61,10 @@
                             </div>
                             <div>
                                 <div class="text-center">
+                                    
+
+                                    {% provider_login_url 'google' method='oauth2' %}
+                                    <a href="{{ login_url }}">Login with Google</a>
                                     <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-google"></i> </button>
                                     <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-facebook"></i> </button>
                                     <button class="btn btn-primary mb-2"><i class="fab fa-twitter"></i> </button>
