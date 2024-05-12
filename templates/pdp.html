@@ -45,7 +45,7 @@
             <div class="col-lg-7 col-sm-12">
                
                 {% if rental_item.image %}
-                <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" max-width: 700px; max-height: 400px;"
+                <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" max-width: 700px; max-height: 400px;;object-fit: cover;"
               class="card-img-top img-cards1" alt="...">
             {% endif %}
                 <div>

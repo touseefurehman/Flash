@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import RentalItem
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-import random
 from django.contrib.auth.decorators import login_required
 from log.models import bio
 from django.core.paginator import Paginator
 from django.db.models import Q
+import random
 
 @login_required
 def rental_item_form(request):
@@ -72,9 +73,12 @@ def pdp(request, rental_item_id):
 
 @login_required
 def my_item(request):
-    rental_items = RentalItem.objects.all()
     user = request.user 
+    rental_items = RentalItem.objects.filter(user=user)
+
     return render(request, 'my_item.html', {'rental_items': rental_items, 'user': user})
+
+
 
 def edit_item(request):
     

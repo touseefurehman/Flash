@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-# views.py
 from django.shortcuts import render, redirect,HttpResponseRedirect
 from django.urls import reverse
 
@@ -69,6 +66,21 @@ def bio2(request):
     return render(request, 'setup_proofile.html',  )
 
 
+
+
+def edit_profile(request):
+   
+    status = bio.objects.update_or_create()
+        
+    return render(request,'edit_profile.html',{'update':status,})
+
+
+
+
+
+
+
+
 @login_required
 def profile(request):
     if not request.user.is_authenticated:
@@ -81,7 +93,6 @@ def profile(request):
 
 
 def user_logout(request):
-    print("User")
     print(request.user)
     logout(request)
     return redirect('login')

@@ -1,136 +1,71 @@
-{% extends 'base.html' %} {% load static %} {% block content %} <div class="container">
-    <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button style="font-size: x-large;" class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My
-                Rental</button>
-            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My item</button>
-        </div>
-    </nav>
-    <div style="height: 100vh;" class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-            tabindex="0">
-            <div class="card123">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card mb-3 custom-card border-0" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top"
-                                        alt="...">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <p class="card-text custom-card-text">John Doe</p>
-                                        <h5 class="card-title custom-card-title">SONY PXW-X200 Full Camera</h5>
-                                        <div class="card-description">
-                                            <p class="card-text custom-card-description">Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit, sed do eiusmod tempor consectetur
-                                                adipiscing elit, sed do eiusmod tempo et dolore magna aliqua.</p>
-                                        </div>
-                                        <div class="custom-card-rating"> <img
-                                                src="{% static 'image/nav/star_rate.png' %}" class="img" alt="...">4.8
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card-address">
-                            <p style="text-align: right;margin-left: auto;" class="card-text">Ohio St. 16 H. 435 South Gate, California
-                            </p>
-                        </div>
-                        <div class="card-details mt-4">
-                            <h5 style="margin-left: auto;" class="card-price">$350</h5>
 
-                        </div>
-                        <div id="currentDate" style="text-align: right;">
-                            <script>
-                                // JavaScript code to display the current date
-                                var currentDate = new Date();
-                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                                var formattedDate = currentDate.toLocaleDateString('en-US', options);
-                                document.getElementById("currentDate").innerHTML = formattedDate;
-                            </script>
-                        </div>
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+ <style>
+    .nav-tabs .nav-link {
+      border: none;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-tabs .nav-link.active {
+      border-color: #007bff;
+    }
+  </style>
+
+
+   
+
+                    <div class="container mt-5">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</a>
+                        </li>
+                        </ul>
+                        <div class="tab-content mt-2" id="myTabContent">
+                        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+
+                            <div class="row">
+                                <div class="col-lg-4">{% if rental_item.image %}
+                                    <img src="{{ MEDIA_URL }}{{ rental_item.image.url }}" style=" width: 100%;height: 200px;;object-fit: cover;"
+                                class="card-img-top img-cards1" alt="...">
+                                {% endif %}</div>
+                                <div class="col-lg-4">dfd</div>
+                                <div class="col-lg-4">sdfdf</div>
+                            </div>
+
+
                         
 
-                        <div class="mt-5" style="display: flex; justify-content: flex-end;gap: 2px;">
-                            <button type="button" style="background: #FF3F64;border: none;"
-                                class="btn btn-primary">Inactive Rental </button>
-                            <button type="button" style="padding: 15px; background:  #005494;;border: none;"
-                                class="btn btn-primary">Rental details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-            <div class="card123">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card mb-3 custom-card border-0" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="{% static 'image/nav/unsplash_178j8tJrNlc.png' %}" class="card-img-top"
-                                        alt="...">
-                                </div>
-                                
-                                {% for rental_it in rental_item  %}
-                                    
-                            <p> {{ rental_item.title }}</p>
-                                {% endfor %}
-                                    
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <p class="card-text custom-card-text"></p>
-                                        <h5 class="card-title custom-card-title">{{ rental_item.title }}</h5>
-                                        <div class="card-description">
-                                            <p class="card-text custom-card-description">Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit, sed do eiusmod tempor consectetur
-                                                adipiscing elit, sed do eiusmod tempo et dolore magna aliqua.</p>
-                                        </div>
-                                        <div class="custom-card-rating"> <img
-                                                src="{% static 'image/nav/star_rate.png' %}" class="img" alt="...">4.8
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card-address">
-                            <p style="text-align: right;margin-left: auto;" class="card-text">{{ rental_item.location }}
-                            </p>
-                        </div>
-                        <div class="card-details mt-4">
-                            <h5 style="margin-left: auto;" class="card-price">$350</h5>
+
+
+
+
+
+
+
+
+                            
+
+
+
+
+
 
                         </div>
-                        <div id="currentDate" style="text-align: right;">
-                            <script>
-                                // JavaScript code to display the current date
-                                var currentDate = new Date();
-                                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                                var formattedDate = currentDate.toLocaleDateString('en-US', options);
-                                document.getElementById("currentDate").innerHTML = formattedDate;
-                            </script>
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                            Content for Tab 2
                         </div>
-                        
-
-                        <div class="mt-5" style="display: flex; justify-content: flex-end;gap: 2px;">
-                            <button type="button" style="background: #FF3F64;border: none;"
-                                class="btn btn-primary">Inactive Rental </button>
-                            <button type="button" style="padding: 15px; background:  #005494;;border: none;"
-                                class="btn btn-primary">Rental details</button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div> {% endblock %}
+                 
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}

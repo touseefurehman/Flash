@@ -60,8 +60,7 @@ def inbox(request):
     return render(request,'inbox.html')
 def search(request):
     return render(request,'search.html')
-def edit_profile(request):
-    return render(request,'edit_profile.html')
+
 
 def rental(request):
     return render(request,'rental.html')

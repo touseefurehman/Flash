@@ -10,6 +10,8 @@ urlpatterns = [
     path('signup/',views.signup, name='signup'),
     path('setupprofile/',views.bio2, name='setupprofile'),
     path('profile/', views.profile, name='profile'),
-    path("user_logout/", views.user_logout, name="user_logout")
+    path("user_logout/", views.user_logout, name="user_logout"),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
