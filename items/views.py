@@ -8,6 +8,8 @@ from log.models import bio
 from django.core.paginator import Paginator
 from django.db.models import Q
 import random
+from django.http import JsonResponse
+
 
 @login_required
 def rental_item_form(request):
@@ -58,7 +60,11 @@ def test(request):
     paginator = Paginator(rental_items, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, "search_by_category.html", {'page_obj': page_obj})
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, "search_by_category_items.html", {'page_obj': page_obj})
+    else:
+        # Otherwise, return the full HTML page
+        return render(request, "search_by_category.html", {'page_obj': page_obj})
 
 def login_redirect(request):
     if not request.user.is_authenticated:
@@ -82,7 +88,7 @@ def my_item(request):
 
 def edit_item(request):
     
-    user_profile = bio.objects.filter(user=request.user).first()
+    
     
     return render(request,'edit_item.html')
 

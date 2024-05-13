@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.shortcuts import render, redirect,HttpResponseRedirect
+from django.shortcuts import render, redirect,HttpResponseRedirect,HttpResponse
 from django.urls import reverse
-
+from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -70,13 +70,13 @@ def bio2(request):
 
 def edit_profile(request):
    
-    status = bio.objects.update_or_create()
         
-    return render(request,'edit_profile.html',{'update':status,})
+    return render(request,'edit_profile.html')
 
 
-
-
+    
+    
+    
 
 
 
@@ -100,3 +100,22 @@ def user_logout(request):
 
 
 
+
+
+
+def resetpasswords(request):
+    if request.method == 'POST':
+        old_password = request.POST.get('old_password')
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+        if new_password != confirm_password:
+            return HttpResponse("New password and confirm password do not match.")
+        
+        # Check if the old password matches the password stored in the database
+        if not check_password(old_password, request.user.password):
+            return HttpResponse("Old password is incorrect.")
+        
+        request.user.set_password(new_password)
+        request.user.save()
+        
+        return HttpResponse("Password updated successfully.")

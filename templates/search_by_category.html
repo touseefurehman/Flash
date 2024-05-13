@@ -30,13 +30,25 @@
 
                 <form method="GET">
                   
-                     <div class="input-group mt-5 " style="max-width: 550px;margin: auto;">
-                     <input type="text" name="q" style="border-radius: 16px;" class="form-control" placeholder="Search something..."
-                     aria-label="Search something..." aria-describedby="search-btn">
+                    <div class="input-group mt-5 " style="max-width: 550px;margin: auto;">
+                        <input type="text" name="q" style="border-radius: 16px;" class="form-control" placeholder="Search something..."
+                                 aria-label="Search something..." aria-describedby="search-btn">
                         <div class="input-group-append">
-                    <button class="s1_button" type="submit" id="search-btn">Search</button>
+                                <button class="s1_button" type="submit" id="search-btn">Search</button>
                          </div>
-            </div></form>
+                    </div>
+        </form>
+        <script> 
+            
+            
+
+
+
+
+
+
+        </script>
+        
         </div>
     </div>
     <section class="category">
@@ -82,7 +94,47 @@
             </ul>
         </div>
     </section>
-</div> {% endblock %}
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#search-form').submit(function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Get the form data
+        var formData = $(this).serialize();
+
+        // Send an AJAX request
+        $.ajax({
+            type: 'GET',
+            url: $(this).attr('action'),
+            data: formData,
+            success: function(data) {
+                // Replace the content of the items section with the received HTML
+                $('.items').html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                // Handle error
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+{% endblock %}
 
 
 

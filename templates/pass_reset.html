@@ -30,13 +30,15 @@
                     <h1>Password Reset</h1>
                 </div>
                 <form method="post">
+                    {% csrf_token %}
+
                     <div class="forms_signup">
                        <div class="form-group p-5">
-                        <label class="email_label" for="password">Current Password:</label>
+                        <label class="email_label" name="old_password" for="password">Current Password:</label>
                         <input class="input_field mt-3 form-control" type="password" id="password" name="password" placeholder="current password" required style="font-family: Poppins; font-size: 16px; font-weight: 500; color:rgba(204, 204, 204, 1);                       ;"><hr>
-                        <label class="email_label" for="password">New Password:</label>    
+                        <label class="email_label" name='new_password' for="password">New Password:</label>    
                         <input class="input_field mt-3 form-control" type="password" id="password" name="password" placeholder="New password" required style="font-family: Poppins; font-size: 16px; font-weight: 500; color:rgba(204, 204, 204, 1);                       ;"><hr>
-                        <label class="email_label" for="password"> Confirm NewPassword:</label>
+                        <label class="email_label" for="password" name='confirm_password'> Confirm NewPassword:</label>
                         <input class="input_field mt-3 form-control" type="password" id="password" name="password" placeholder="Confirm password" required style="font-family: Poppins; font-size: 16px; font-weight: 500; color:rgba(204, 204, 204, 1);                       ;">
                         
                         
