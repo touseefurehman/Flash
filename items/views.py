@@ -81,6 +81,7 @@ def pdp(request, rental_item_id):
 def my_item(request):
     user = request.user 
     rental_items = RentalItem.objects.filter(user=user)
+    user_profile = bio.objects.filter(user=request.user).first()
 
     return render(request, 'my_item.html', {'rental_items': rental_items, 'user': user})
 
@@ -90,7 +91,7 @@ def edit_item(request):
     
     
     
-    return render(request,'edit_item.html')
+    return render(request,'edit_item.html' )
 
 
 
@@ -98,4 +99,4 @@ def search_by_list(request):
     user_profile = bio.objects.filter(user=request.user).first()
 
     rental_items = RentalItem.objects.all() 
-    return render(request, "search_by_list.html", {'rental_items': rental_items})
+    return render(request, "search_by_list.html", {'rental_items': rental_items} , {'user_profile': user_profile})

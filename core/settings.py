@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'allauth.account',  
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', 
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
+
 
     
     
     
 ]
-
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -56,8 +58,31 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         }
+    },
+    'facebook': {
+        'SCOPE': [
+            'public_profile', 
+            'email',          
+            
+        ],
+        
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+     'twitter': {
+        'SCOPE': [
+            'public_profile', 
+            'email',          
+            
+        ],
+        
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
     }
 }
+
 
 
 
