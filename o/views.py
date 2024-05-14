@@ -64,24 +64,6 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def checkout(request):
     return render(request, 'checkout.html')
 
-def withdraw(request):
-    if request.method == 'POST':
-        token = request.POST['stripeToken']
-        amount = 1000  # $10.00
-        try:
-            charge = stripe.Charge.create(
-                amount=amount,
-                currency='usd',
-                description='Example charge',
-                source=token,
-            )
-        except stripe.error.CardError as e:
-            # Handle card error
-            pass
-
-        # Handle other exceptions
-
-        return render(request, 'withdraw.html')
 
 
 
@@ -112,3 +94,13 @@ def rental_list(request):
 
 #def list_an_item(request):
  #   return render(request,'list_an_item.html')
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+def withdraw(request):
+
+        return render(request, 'withdraw.html')
