@@ -77,7 +77,6 @@ def edit_profile(request):
     
     user_profile = get_object_or_404(bio, user=request.user)
 
-    user_profile = bio.objects.filter(user=request.user).first()
     if request.method == 'POST':
         name= request.POST.get('name')
         print('name')

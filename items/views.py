@@ -6,9 +6,6 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from log.models import bio
 from django.core.paginator import Paginator
-from django.db.models import Q
-import random
-from django.http import JsonResponse
 
 
 @login_required
@@ -87,18 +84,75 @@ def my_item(request):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@login_required
 def edit_item(request, item_id):
-    
     rental_item = get_object_or_404(RentalItem, pk=item_id)
-    
+    rental_item = RentalItem.objects.filter(user=request.user).first()
+
     if request.method == 'POST':
-       title = request.POST.get('title')
-       
-       rental_item.title=title
-       
-       rental_item.save()
-       return redirect('rent')    
+
+        title = request.POST.get('title')
+        daily_price = request.POST.get('daily_price')
+        weekly_price = request.POST.get('weekly_price')
+        monthly_price = request.POST.get('monthly_price')
+        rental_period = request.POST.get('rental_period')
+        category = request.POST.get('category')
+        market_value = request.POST.get('market_value')
+        quantity = request.POST.get('quantity')
+        location = request.POST.get('location')
+        description = request.POST.get('description')
+        
+
+        rental_item.title = title
+        rental_item.daily_price = daily_price
+        rental_item.weekly_price = weekly_price
+        rental_item.monthly_price = monthly_price
+        rental_item.rental_period = rental_period
+        rental_item.category = category
+        rental_item.market_value = market_value
+        rental_item.quantity = quantity
+        rental_item.location = location
+        rental_item.description = description
+        
+
+        rental_item.save()
+        
+
+        return redirect('my_item')
+
     return render(request, 'edit_item.html', {'rental_item': rental_item})
+
+
+
+
+
+
+
 
 
 def search_by_list(request):
@@ -106,3 +160,12 @@ def search_by_list(request):
 
     rental_items = RentalItem.objects.all() 
     return render(request, "search_by_list.html", {'rental_items': rental_items} , {'user_profile': user_profile})
+
+
+
+def delete_item(request, item_id):
+    rental_item = get_object_or_404(RentalItem, id=item_id)
+    rental_item.delete()
+    return redirect('my_item')
+
+
