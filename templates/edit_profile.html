@@ -69,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div id="profileContent" class="col-md-9 mt-5 profile-content">
                         <div class="top_button">
                             <div class="inbox d-flex justify-content-between ">
@@ -94,34 +95,33 @@
                                 <div class="col-lg-6 col-md-12">
                                     <div class="mb-3">
                                         <label for="firstName" class="form-label profile-label">First Name</label>
-                                        <input type="text" class="form-1 profile-input" id="firstName">
+                                        <input type="text" name='name' value="{{ user_profile.name }}" class="form-1 profile-input" id="firstName">
                                     </div>
                                     <div class="mb-3">
                                         <label for="emailAddress" class="form-label profile-label">Email Address</label>
-                                        <input type="text" class="form-1 profile-input" id="emailAddress">
+                                        <input type="text" class="form-1 profile-input" id="emailAddress" name='email' value="{{ user_profile.email }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="location" class="form-label profile-label">Location</label>
-                                        <input type="text" class="form-1 profile-input" id="location">
+                                        <input type="text" class="form-1 profile-input" id="location" name='location' value="{{ user_profile.location }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="mb-3">
                                         <label for="lastName" class="form-label profile-label">Last Name</label>
-                                        <input type="text" class="form-1 profile-input" value="{{ user_profile.number }}" id="lastName">
+                                        <input type="text" class="form-1 profile-input" value="{{ user_profile.last_name }}" name="last_name" id="lastName">
                                     </div>
                                     <div class="mb-3">
                                         <label for="phoneNumber" class="form-label profile-label">Phone Number</label>
-                                        <input type="text" class="form-1 profile-input" id="phoneNumber">
+                                        <input type="text" class="form-1 profile-input" value="{{ user_profile.number }}"  name="number" id="phoneNumber">
                                     </div>
                                 </div>
                             </div>
                             <div class="describation">
                                 <div class="mb-3">
                                     <label for="profileDescription" class="form-label profile-label">Profile Description</label>
-                                    <textarea class="form-control profile-textarea" id="profileDescription" rows="7"
-                                        maxlength="200"></textarea>
-                                    <div id="wordCount" class="form-text">0/200 words</div>
+                                    <textarea class="form-control profile-textarea" id="profileDescription" placeholder="{{ user_profile.about }}" name="about" rows="7"
+                                        ></textarea>
                                 </div>
                             </div>
                         </div></div></div></div>

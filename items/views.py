@@ -61,7 +61,7 @@ def test(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        return render(request, "search_by_category_items.html", {'page_obj': page_obj})
+        return render(request, "search_by_category.html", {'page_obj': page_obj})
     else:
         # Otherwise, return the full HTML page
         return render(request, "search_by_category.html", {'page_obj': page_obj})
@@ -87,12 +87,18 @@ def my_item(request):
 
 
 
-def edit_item(request):
+def edit_item(request, item_id):
     
+    rental_item = get_object_or_404(RentalItem, pk=item_id)
     
-    
-    return render(request,'edit_item.html' )
-
+    if request.method == 'POST':
+       title = request.POST.get('title')
+       
+       rental_item.title=title
+       
+       rental_item.save()
+       return redirect('rent')    
+    return render(request, 'edit_item.html', {'rental_item': rental_item})
 
 
 def search_by_list(request):

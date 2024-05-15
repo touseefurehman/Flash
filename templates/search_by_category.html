@@ -28,7 +28,7 @@
             <p class="text-center pt-3" style="max-width: 500px; margin: 0 auto;">Rent a Camera from a fellow
                 photographer in Hong Kong. Over 50% Cheaper Than Traditional Rental Spend less & Enjoy more</p>
 
-                <form method="GET">
+                <form method="GET" action="{% url 'search_by_category' %}" id="search-form">
                   
                     <div class="input-group mt-5 " style="max-width: 550px;margin: auto;">
                         <input type="text" name="q" style="border-radius: 16px;" class="form-control" placeholder="Search something..."
@@ -98,39 +98,32 @@
 
 
 
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-    $('#search-form').submit(function(event) {
-        // Prevent default form submission
-        event.preventDefault();
-
-        // Get the form data
-        var formData = $(this).serialize();
-
-        // Send an AJAX request
-        $.ajax({
-            type: 'GET',
-            url: $(this).attr('action'),
-            data: formData,
-            success: function(data) {
-                // Replace the content of the items section with the received HTML
-                $('.items').html(data);
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-                // Handle error
-            }
+    $(document).ready(function() {
+        $('#search-form').on('submit', function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+    
+            // Get the form data
+            var formData = $(this).serialize();
+    
+            // Send an AJAX request
+            $.ajax({
+                type: 'GET',
+                url: $(this).attr('action'), // Assuming the form action contains the URL to handle search
+                data: formData,
+                success: function(data) {
+                    // Replace the content of the items section with the received HTML
+                    $('.items').html($(data).find('.items').html());
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    // Handle error
+                }
+            });
         });
     });
-});
-</script>
-
-
-
+    </script>
 
 
 

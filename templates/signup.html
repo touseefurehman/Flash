@@ -57,9 +57,13 @@
                         </div>
                         <div>
                             <div class="text-center">
-                                <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-google"></i> </button>
-                                <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-facebook"></i> </button>
-                                <button class="btn btn-primary mb-2"><i class="fab fa-twitter"></i> </button>
+                                    
+                                {% load socialaccount %}
+                              <a href="{% provider_login_url 'google' action='reauthenticate' %}" class="alert-link">
+                                <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-google"></i> </button></a>
+                                <a href="{% provider_login_url 'facebook' action='reauthenticate' %}" class="alert-link">
+                                <button class="btn btn-primary mb-2 mr-2"><i class="fab fa-facebook"></i> </button></a>
+                             
                             </div>
                         </div>
                         <div>

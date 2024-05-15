@@ -7,6 +7,8 @@ from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from .models import bio
+from django.shortcuts import render, get_object_or_404
+
 
 def signup(request):
     if request.method == "POST":
@@ -68,14 +70,40 @@ def bio2(request):
 
 
 
+
+@login_required
 def edit_profile(request):
-   
+    
+    
+    user_profile = get_object_or_404(bio, user=request.user)
+
+    user_profile = bio.objects.filter(user=request.user).first()
+    if request.method == 'POST':
+        name= request.POST.get('name')
+        print('name')
+        email= request.POST.get('email')
+        location= request.POST.get('location')
+        about= request.POST.get('about')
+        number= request.POST.get('number')
+        last_name =request.POST.get('last_name')
         
-    return render(request,'edit_profile.html')
+        
+        
+        user_profile.name=name
+        user_profile.email=email
+        user_profile.location=location
+        user_profile.about=about
+        user_profile.number=number
+        user_profile.last_name=last_name
+        user_profile.save()
+        return redirect('profile')
+
+    
+    return render(request, 'edit_profile.html', {'user_profile': user_profile})
 
 
     
-    
+
     
 
 
