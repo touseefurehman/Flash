@@ -55,9 +55,6 @@ def lend (request):
 
 def profile(request):
     return render(request,'profile.html')
-#def withdraw(request):
-    #return render(request,'withdraw.html')
-# views.py
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -86,21 +83,9 @@ def rental_list(request):
 
 
 
-
-
-
-
-
-
-#def list_an_item(request):
- #   return render(request,'list_an_item.html')
  
  
  
  
  
  
- 
-def withdraw(request):
-
-        return render(request, 'withdraw.html')

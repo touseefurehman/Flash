@@ -14,8 +14,17 @@
       <div>
         <p class="text-center" style="max-width: 500px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore labore et dolore labore et dolore magna aliqua.</p>
       </div>
-      <a href="#" style="background: #005494;
-      " class="btn btn-primary mt-3">Withdraw</a>
+
+
+      <form method="post">
+        {% csrf_token %}
+              <section class="section">
+                <div class="container">
+                  <button class="button is-primary" style="background: #005494;
+                  " class="btn btn-primary mt-3" id="submitBtn">Purchase!</button>
+                </div>
+              </section>
+      </form>
 
   </div>
 </div>
@@ -35,89 +44,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- checkout.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Checkout</title>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        var stripe = Stripe('{{ STRIPE_PUBLISHABLE_KEY }}');
-        var elements = stripe.elements();
-
-        var style = {
-            base: {
-                // Add your base input styles here
-            }
-        };
-
-        var card = elements.create('card', {style: style});
-        card.mount('#card-element');
-
-        var form = document.getElementById('payment-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            stripe.createToken(card).then(function(result) {
-                if (result.error) {
-                    var errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = result.error.message;
-                } else {
-                    stripeTokenHandler(result.token);
-                }
-            });
-        });
-
-        function stripeTokenHandler(token) {
-            var form = document.getElementById('payment-form');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'stripeToken');
-            hiddenInput.setAttribute('value', token.id);
-            form.appendChild(hiddenInput);
-
-            form.submit();
-        }
-    </script>
-</head>
-<body>
-    <h1>Checkout</h1>
-    <form  method="post" id="payment-form">
-        {% csrf_token %}
-        <div id="card-element"></div>
-        <div id="card-errors" role="alert"></div>
-        <button type="submit">Submit Payment</button>
-    </form>
-    <html>
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Django + Stripe Checkout</title>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-          <script defer src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"></script>
-        </head>
-        <body>
-        <section class="section">
-          <div class="container">
-            <button class="button is-primary" id="submitBtn">Purchase!</button>
-          </div>
-        </section>
-        </body>
-      </html>
 
 
 

@@ -18,6 +18,12 @@ class RentalItem(models.Model):
     description = models.TextField(max_length=200)
     image = models.ImageField(upload_to='rental_item_images/', blank=True, null=True)        
 
-    
+
+
+
+class ratings(models.Model):
+    comment = models.TextField()
+
+
     def __str__(self):
         return self.title

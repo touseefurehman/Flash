@@ -21,7 +21,6 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_51PFwrzP6KHAyJDbS7GWVV8xh2WjQvmOkuZXcxZG4tsGPm
 STRIPE_SECRET_KEY = 'sk_test_51PFwrzP6KHAyJDbSvZxbaoBzrmVDr8kHoEEVfwZs27wVABs9TJFEQirTyotR8WKJ90IZuGTP84IbDXPMHlC0KFAb00R7xcWZKs'
 
 # Application definition
-
 INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
@@ -35,7 +34,7 @@ INSTALLED_APPS = [
     'items',
     'log',
     'o',
-    
+    'products',    
     'allauth',   
     'allauth.account',  
     'allauth.socialaccount',
@@ -189,7 +188,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Add this line
 ]
-# settings.py
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
+
+ # stripe api
+STRIPE_PUBLIC_KEY = "pk_test_51PFwrzP6KHAyJDbS7GWVV8xh2WjQvmOkuZXcxZG4tsGPmru6wGacAdzrSE3X4T3bEzjrl2z3pD6kY8JpDy17I4PW00xPdPn6LV"
+STRIPE_SECRET_KEY = "sk_test_51PFwrzP6KHAyJDbSvZxbaoBzrmVDr8kHoEEVfwZs27wVABs9TJFEQirTyotR8WKJ90IZuGTP84IbDXPMHlC0KFAb00R7xcWZKs"
